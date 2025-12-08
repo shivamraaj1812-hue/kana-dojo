@@ -113,7 +113,7 @@ export function generateCardColor(
  */
 export function generateBorderColor(
   backgroundColor: string,
-  lightnessBoost = 0.50,
+  lightnessBoost = 0.5,
   chromaMultiplier = 1.85
 ): string {
   const parsed = parseOklch(backgroundColor);
@@ -243,7 +243,7 @@ const baseThemeSets: BaseThemeGroup[] = [
       },
       {
         id: 'yukata',
-        backgroundColor: 'oklch(19.83% 0.0367 263.24 / 1)',
+        backgroundColor: 'oklch(22.83% 0.0367 263.24 / 1)',
         mainColor: 'oklch(65.16% 0.1943 14.70 / 1)',
         secondaryColor: 'oklch(68.92% 0.1657 313.51 / 1)'
       },
