@@ -29,6 +29,16 @@ const Sidebar = () => {
     if (!hotkeysOn) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
+      // Don't trigger shortcuts when typing in form elements
+      const target = event.target as HTMLElement;
+      if (
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable
+      ) {
+        return;
+      }
+
       if (event.key === 'Escape') {
         escButtonRef.current?.click();
       } else if (event.key.toLowerCase() === 'h') {
