@@ -70,13 +70,20 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
       ? 'bg-gradient-to-r from-[var(--secondary-color)] to-[var(--main-color)]'
       : 'bg-gradient-to-r from-[var(--main-color)] to-[var(--secondary-color)]';
 
+    // When gradient is enabled, match border color to the left side of the gradient
+    const effectiveBorderColorScheme = gradient
+      ? gradientReversed
+        ? 'secondary'
+        : 'main'
+      : borderColorScheme;
+
     return (
       <button
         type='button'
         className={cn(
           actionButtonVariants({
             colorScheme: gradient ? undefined : colorScheme,
-            borderColorScheme,
+            borderColorScheme: effectiveBorderColorScheme,
             borderRadius,
             borderBottomThickness,
             className
