@@ -50,11 +50,12 @@ Whether you're just starting with the basic kana syllabaries or preparing for th
 
 ### ✨ Key Features
 
-#### 🎯 **Three Training Dojos**
+#### 🎯 **Four Training Dojos**
 
 - **Kana Dojo** - Master Hiragana and Katakana syllabaries with base, dakuon, yoon, and foreign sound groups
 - **Kanji Dojo** - Learn essential kanji characters organized by JLPT levels (N5, N4, N3, N2)
 - **Vocabulary Dojo** - Build your Japanese vocabulary with curated word collections by proficiency level
+- **Calligraphy Dojo** - Practice and level-up your Japanese writting by stroke-by-stroke way
 
 #### 🎮 **Four Dynamic Game Modes**
 

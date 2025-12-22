@@ -124,6 +124,21 @@ const Sidebar = () => {
       >
         語<span className='max-lg:hidden'> Vocabulary</span>
       </Link>
+
+      {/*calligraphy */}
+      <Link
+        href='/calligraphy'
+        className={clsx(
+          'text-2xl  duration-250 transition-all lg:py-2 lg:px-4 max-lg:px-3 max-lg:py-2 rounded-xl lg:w-full flex max-lg:justify-center items-center gap-2',
+          pathWithoutLocale === '/calligraphy'
+            ? 'text-[var(--main-color)] bg-[var(--border-color)] lg:bg-[var(--card-color)]'
+            : 'hover:bg-[var(--card-color)] text-[var(--secondary-color)]'
+        )}
+        onClick={playClick}
+      >
+        書<span className='max-lg:hidden'> Calligraphy</span>
+      </Link>
+
       <Link
         href='/kanji'
         className={clsx(
