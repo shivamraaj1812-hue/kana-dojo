@@ -17,6 +17,8 @@ concurrency:
 jobs:
   comment:
     runs-on: ubuntu-latest
+    # Skip automation PRs to save GitHub Actions minutes
+    if: ${{ !contains(github.event.workflow_run.head_branch, 'automation/') }}
 
     steps:
       - name: Checkout repository
