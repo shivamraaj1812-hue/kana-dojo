@@ -147,12 +147,12 @@
     "id": 25,
     "fact": "Japan has a museum dedicated to instant ramen in Osaka where visitors can create their own custom Cup Noodles flavor combinations.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 26,
     "fact": "The concept of 'wabi-sabi' (ä¾˜å¯‚) finds beauty in imperfection and impermanence - a cracked bowl is more valuable because of its history.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
