@@ -183,12 +183,12 @@
     "id": 31,
     "fact": "Japan has 'love hotels' (rabuho) with themed rooms ranging from Hello Kitty to medieval dungeons, renting by the hour or night.",
     "issued": false,
-    "completed": false
+    "completed": true
   },
   {
     "id": 32,
     "fact": "The practice of 'nemawashi' (æ ¹å›žã—) means building consensus before a meeting so decisions appear unanimous - the actual negotiation happens beforehand.",
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
