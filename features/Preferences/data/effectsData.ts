@@ -74,6 +74,18 @@ export const CURSOR_TRAIL_EFFECTS: EffectDefinition[] = [
     description: 'Butterflies flutter behind your cursor',
   },
   {
+    id: 'firework',
+    name: 'Firework',
+    emoji: '\u{1F386}',
+    description: 'Festival fireworks bloom behind your cursor',
+  },
+  {
+    id: 'festival',
+    name: 'Festival',
+    emoji: '\u{1F38A}',
+    description: 'Matsuri confetti trails your movement',
+  },
+  {
     id: 'moon',
     name: 'Moon',
     emoji: '\u{1F319}',
@@ -163,6 +175,18 @@ export const CURSOR_TRAIL_EFFECTS: EffectDefinition[] = [
     emoji: '\u{1F962}',
     description: 'Chopsticks flicker behind your cursor',
   },
+  {
+    id: 'hina',
+    name: 'Hina Dolls',
+    emoji: '\u{1F38E}',
+    description: 'Hina dolls glide behind your cursor',
+  },
+  {
+    id: 'senbei',
+    name: 'Senbei',
+    emoji: '\u{1F358}',
+    description: 'Rice crackers scatter in your trail',
+  },
 ];
 
 export const CLICK_EFFECTS: EffectDefinition[] = [
@@ -232,6 +256,12 @@ export const CLICK_EFFECTS: EffectDefinition[] = [
     name: 'Butterfly',
     emoji: '\u{1F98B}',
     description: 'Butterflies scatter from every click',
+  },
+  {
+    id: 'moon',
+    name: 'Moon',
+    emoji: '\u{1F319}',
+    description: 'Crescent moons burst from each click',
   },
   {
     id: 'firework',
@@ -328,5 +358,17 @@ export const CLICK_EFFECTS: EffectDefinition[] = [
     name: 'Chopsticks',
     emoji: '\u{1F962}',
     description: 'Chopsticks scatter from each click',
+  },
+  {
+    id: 'hina',
+    name: 'Hina Dolls',
+    emoji: '\u{1F38E}',
+    description: 'Hina dolls burst from each click',
+  },
+  {
+    id: 'senbei',
+    name: 'Senbei',
+    emoji: '\u{1F358}',
+    description: 'Rice crackers scatter from each click',
   },
 ];
