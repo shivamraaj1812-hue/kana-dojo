@@ -39,6 +39,7 @@ jobs:
             const themeBacklogPath = 'community/backlog/theme-backlog.json';
             const factsBacklogPath = 'community/backlog/facts-backlog.json';
             const proverbsBacklogPath = 'community/backlog/proverbs-backlog.json';
+            const haikuBacklogPath = 'community/backlog/haiku-backlog.json';
             const triviaBacklogPath = 'community/backlog/trivia-backlog.json';
             const grammarBacklogPath = 'community/backlog/grammar-backlog.json';
             const animeQuotesBacklogPath = 'community/backlog/anime-quotes-backlog.json';
@@ -59,6 +60,7 @@ jobs:
             const isThemeContribution = prTitleLower.includes('theme');
             const isFactContribution = prTitleLower.includes('fact') && !prTitleLower.includes('proverb');
             const isProverbContribution = prTitleLower.includes('proverb');
+            const isHaikuContribution = prTitleLower.includes('haiku');
             const isTriviaContribution = prTitleLower.includes('trivia');
             const isGrammarContribution = prTitleLower.includes('grammar');
             const isAnimeQuoteContribution = prTitleLower.includes('anime quote') || prTitleLower.includes('anime-quote') || prTitleLower.includes('animequote');
@@ -70,7 +72,7 @@ jobs:
             const isCommonMistakeContribution = prTitleLower.includes('common mistake') || prTitleLower.includes('common-mistake');
             const isVideoGameQuoteContribution = prTitleLower.includes('video game quote') || prTitleLower.includes('videogame quote') || prTitleLower.includes('video-game-quote');
 
-            if (!isThemeContribution && !isFactContribution && !isProverbContribution && !isTriviaContribution && !isGrammarContribution && !isAnimeQuoteContribution && !isIdiomContribution && !isRegionalDialectContribution && !isFalseFriendContribution && !isCulturalEtiquetteContribution && !isExampleSentenceContribution && !isCommonMistakeContribution && !isVideoGameQuoteContribution) {
+            if (!isThemeContribution && !isFactContribution && !isProverbContribution && !isHaikuContribution && !isTriviaContribution && !isGrammarContribution && !isAnimeQuoteContribution && !isIdiomContribution && !isRegionalDialectContribution && !isFalseFriendContribution && !isCulturalEtiquetteContribution && !isExampleSentenceContribution && !isCommonMistakeContribution && !isVideoGameQuoteContribution) {
               console.log('Not a community contribution PR, skipping');
               core.setOutput('should_commit', 'false');
               return;
@@ -140,6 +142,15 @@ jobs:
                   if (matches.length > 0) {
                     targetIssue = matches[0].number;
                     console.log(`Found matching proverb issue: #${targetIssue}`);
+                  }
+                }
+              } else if (isHaikuContribution) {
+                const haikuIdMatch = prTitle.match(/#(\d+)/);
+                const haikuId = haikuIdMatch ? haikuIdMatch[1] : null;
+                if (haikuId) {
+                  const matches = await searchOpenCommunityIssues(`"Add Classic Japanese Haiku #${haikuId}"`);
+                  if (matches.length > 0) {
+                    targetIssue = matches[0].number;
                   }
                 }
               } else if (isTriviaContribution) {
@@ -344,6 +355,23 @@ jobs:
                       fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
                       needsCommit = true;
                       console.log(`Marked proverb #${proverbId} as completed`);
+                    }
+                  }
+                } else if (isHaikuContribution) {
+                  const haikuItems = JSON.parse(fs.readFileSync(haikuBacklogPath, 'utf8'));
+                  const issueHaikuMatch = issueTitle.match(/Add Classic Japanese Haiku\s*#(\d+)/i);
+                  const prHaikuMatch = prTitle.match(/#(\d+)/);
+                  const haikuId = issueHaikuMatch ? parseInt(issueHaikuMatch[1]) : (prHaikuMatch ? parseInt(prHaikuMatch[1]) : null);
+
+                  if (haikuId !== null) {
+                    const haikuIndex = haikuItems.findIndex(function(h) { return h.id === haikuId; });
+                    if (haikuIndex !== -1) {
+                      haikuItems[haikuIndex].completed = true;
+                      haikuItems[haikuIndex].completedBy = prAuthor;
+                      haikuItems[haikuIndex].completedPR = prNumber;
+                      fs.writeFileSync(haikuBacklogPath, JSON.stringify(haikuItems, null, 2));
+                      needsCommit = true;
+                      console.log(`Marked haiku #${haikuId} as completed`);
                     }
                   }
                 } else if (isTriviaContribution) {

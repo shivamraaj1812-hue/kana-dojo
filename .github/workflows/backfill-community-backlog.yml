@@ -46,6 +46,7 @@ jobs:
             const themeBacklogPath = 'community/backlog/theme-backlog.json';
             const factsBacklogPath = 'community/backlog/facts-backlog.json';
             const proverbsBacklogPath = 'community/backlog/proverbs-backlog.json';
+            const haikuBacklogPath = 'community/backlog/haiku-backlog.json';
             const triviaBacklogPath = 'community/backlog/trivia-backlog.json';
             const grammarBacklogPath = 'community/backlog/grammar-backlog.json';
             const animeQuotesBacklogPath = 'community/backlog/anime-quotes-backlog.json';
@@ -60,6 +61,7 @@ jobs:
             const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
             const proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
+            const haiku = JSON.parse(fs.readFileSync(haikuBacklogPath, 'utf8'));
             const trivia = JSON.parse(fs.readFileSync(triviaBacklogPath, 'utf8'));
             const grammar = JSON.parse(fs.readFileSync(grammarBacklogPath, 'utf8'));
             const animeQuotes = JSON.parse(fs.readFileSync(animeQuotesBacklogPath, 'utf8'));
@@ -117,6 +119,21 @@ jobs:
                     needsCommit = true;
                     reenabled += 1;
                     console.log(`Re-enabled proverb #${proverbId}`);
+                  }
+                }
+                return;
+              }
+
+              if (title.includes('Add Classic Japanese Haiku #')) {
+                const haikuIdMatch = title.match(/#(\d+)/);
+                if (haikuIdMatch) {
+                  const haikuId = parseInt(haikuIdMatch[1]);
+                  const haikuIndex = haiku.findIndex(function(h) { return h.id === haikuId; });
+                  if (haikuIndex !== -1 && !haiku[haikuIndex].completed && haiku[haikuIndex].issued) {
+                    haiku[haikuIndex].issued = false;
+                    needsCommit = true;
+                    reenabled += 1;
+                    console.log(`Re-enabled haiku #${haikuId}`);
                   }
                 }
                 return;
@@ -316,6 +333,7 @@ jobs:
               fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
               fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+              fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
               fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
               fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
               fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));

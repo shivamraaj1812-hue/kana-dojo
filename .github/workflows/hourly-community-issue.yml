@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       force_type:
-        description: 'Force issue type: theme | fact | proverb | trivia | grammar | animeQuote | videoGameQuote | idiom | regionalDialect | falseFriend | culturalEtiquette | exampleSentence | commonMistake'
+        description: 'Force issue type: theme | fact | proverb | haiku | trivia | grammar | animeQuote | videoGameQuote | idiom | regionalDialect | falseFriend | culturalEtiquette | exampleSentence | commonMistake'
         required: false
         type: string
       dry_run:
@@ -126,6 +126,7 @@ jobs:
             const themeBacklogPath = 'community/backlog/theme-backlog.json';
             const factsBacklogPath = 'community/backlog/facts-backlog.json';
             const proverbsBacklogPath = 'community/backlog/proverbs-backlog.json';
+            const haikuBacklogPath = 'community/backlog/haiku-backlog.json';
             const triviaBacklogPath = 'community/backlog/trivia-backlog.json';
             const grammarBacklogPath = 'community/backlog/grammar-backlog.json';
             const animeQuotesBacklogPath = 'community/backlog/anime-quotes-backlog.json';
@@ -140,6 +141,7 @@ jobs:
             const themesSourcePath = 'community/content/community-themes.json';
             const factsSourcePath = 'community/content/japan-facts.json';
             const proverbsSourcePath = 'community/content/japanese-proverbs.json';
+            const haikuSourcePath = 'community/content/japanese-haiku.json';
             const triviaSourcePaths = {
               easy: 'community/content/japan-trivia-easy.json',
               medium: 'community/content/japan-trivia-medium.json',
@@ -160,6 +162,7 @@ jobs:
             const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
             const proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
+            const haiku = JSON.parse(fs.readFileSync(haikuBacklogPath, 'utf8'));
             const trivia = JSON.parse(fs.readFileSync(triviaBacklogPath, 'utf8'));
             const grammar = JSON.parse(fs.readFileSync(grammarBacklogPath, 'utf8'));
             const animeQuotes = JSON.parse(fs.readFileSync(animeQuotesBacklogPath, 'utf8'));
@@ -192,6 +195,15 @@ jobs:
                 existingProverbs = JSON.parse(fs.readFileSync(proverbsSourcePath, 'utf8'));
               } catch (e) {
                 console.log(`Could not parse ${proverbsSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingHaiku = [];
+            if (fs.existsSync(haikuSourcePath)) {
+              try {
+                existingHaiku = JSON.parse(fs.readFileSync(haikuSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${haikuSourcePath}: ${e.message}`);
               }
             }
 
@@ -322,7 +334,7 @@ jobs:
               }
             }
 
-            const defaultOrder = ['theme', 'fact', 'proverb', 'trivia', 'grammar', 'animeQuote', 'videoGameQuote', 'idiom', 'regionalDialect', 'falseFriend', 'culturalEtiquette', 'exampleSentence', 'commonMistake'];
+            const defaultOrder = ['theme', 'fact', 'proverb', 'haiku', 'trivia', 'grammar', 'animeQuote', 'videoGameQuote', 'idiom', 'regionalDialect', 'falseFriend', 'culturalEtiquette', 'exampleSentence', 'commonMistake'];
             const typeOrder = forceType && defaultOrder.includes(forceType)
               ? [forceType]
               : defaultOrder;
@@ -512,6 +524,62 @@ jobs:
               const proverbIndex = proverbs.findIndex(function(p) { return p.id === item.id; });
               proverbs[proverbIndex].issued = true;
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+              backlogChanged = true;
+              } else if (nextType === 'haiku') {
+              item = findRandomEligible(haiku, function(h) {
+                if (h.issued || h.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingHaiku)) {
+                  const exists = existingHaiku.some(function(eh) {
+                    if (!eh || typeof eh !== 'object') {
+                      return false;
+                    }
+                    return eh.japanese === h.japanese && eh.romaji === h.romaji && eh.english === h.english;
+                  });
+                  if (exists) {
+                    const haikuIdx = haiku.findIndex(function(hi) { return hi.id === h.id; });
+                    haiku[haikuIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more haiku available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateHaiku = await hasOpenIssueForQuery(`"Classic Japanese Haiku" "${item.id}"`);
+              if (duplicateHaiku) {
+                console.log(`Issue already exists for haiku #${item.id}: Marking as issued and skipping.`);
+                const haikuIdx = haiku.findIndex(function(h) { return h.id === item.id; });
+                haiku[haikuIdx].issued = true;
+                fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.haiku;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "poet": "${item.poet}",\n  "season": "${item.season}",\n  "kigo": "${item.kigo}",\n  "notes": "${item.notes}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.haikuHeader}\n\n> ${item.japanese.replace(/\n/g, '\n> ')}\n\n**Romaji:** ${item.romaji}  \n**English:** ${item.english}  \n**Poet:** ${item.poet}  \n**Season:** ${item.season}  \n**Kigo:** ${item.kigo}  \n**Notes:** ${item.notes}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const haikuIndex = haiku.findIndex(function(h) { return h.id === item.id; });
+              haiku[haikuIndex].issued = true;
+              fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
               backlogChanged = true;
               } else if (nextType === 'trivia') {
               item = findRandomEligible(trivia, function(q) {
