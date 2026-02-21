@@ -490,5 +490,11 @@
     "backgroundColor": "oklch(94.0% 0.025 345.0 / 1)",
     "mainColor": "oklch(68.0% 0.160 350.0 / 1)",
     "secondaryColor": "oklch(72.0% 0.110 210.0 / 1)"
+  },
+  {
+    "id": "storm-lake",
+    "backgroundColor": "oklch(15.0% 0.050 250.0 / 1)",
+    "mainColor": "oklch(78.0% 0.180 235.0 / 1)",
+    "secondaryColor": "oklch(62.0% 0.130 270.0 / 1)"
   }
 ]
