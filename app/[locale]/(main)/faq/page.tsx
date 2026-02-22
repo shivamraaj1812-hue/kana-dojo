@@ -152,20 +152,53 @@ export default async function FAQPage({
   ];
 
   const faqsForSchema = groups.flatMap(group => group.faqs);
+  const pageUrl = `https://kanadojo.com/${locale}/faq`;
 
   const faqSchema = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    '@id': `https://kanadojo.com/${locale}/faq#faq`,
-    inLanguage: locale,
-    mainEntity: faqsForSchema.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: t('title'),
+        description: t('subtitle'),
+        inLanguage: locale,
+        isPartOf: {
+          '@id': 'https://kanadojo.com/#website',
+        },
+        about: {
+          '@type': 'Thing',
+          name: 'Japanese learning',
+        },
       },
-    })),
+      {
+        '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
+        url: pageUrl,
+        inLanguage: locale,
+        mainEntity: faqsForSchema.map(faq => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${pageUrl}#sections`,
+        itemListOrder: 'https://schema.org/ItemListOrderAscending',
+        numberOfItems: groups.length,
+        itemListElement: groups.map((group, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: group.title,
+          url: `${pageUrl}#${group.id}`,
+        })),
+      },
+    ],
   };
 
   return (

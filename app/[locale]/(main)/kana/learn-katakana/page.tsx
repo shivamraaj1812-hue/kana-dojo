@@ -4,6 +4,7 @@ import { generatePageMetadata } from '@/core/i18n/metadata-helpers';
 import { CourseSchema } from '@/shared/components/SEO/CourseSchema';
 import { BreadcrumbSchema } from '@/shared/components/SEO/BreadcrumbSchema';
 import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
+import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO/FAQSchema';
 import { routing } from '@/core/i18n/routing';
 
 export function generateStaticParams() {
@@ -44,7 +45,7 @@ export default async function LearnKatakanaPage({
         ]}
       />
       <CourseSchema
-        name='Learn Katakana - Japanese Alphabet Course'
+        name='Learn Katakana - Complete Japanese Alphabet Course'
         description='Master Katakana with interactive drills, kana selection cards, and instant feedback. Study the full katakana chart, dakuon, yoon, and foreign sound combinations with guided practice.'
         url={`https://kanadojo.com/${locale}/kana/learn-katakana`}
         educationalLevel='Beginner'
@@ -53,16 +54,17 @@ export default async function LearnKatakanaPage({
       />
       <LearningResourceSchema
         name='Katakana Practice Playground'
-        description='Interactive Katakana learning hub with selectable character groups, drills, and training modes. Designed for fast recognition, pronunciation, and reading confidence.'
+        description='Interactive Katakana learning hub with selectable character groups, drills, and training modes. Built for recognizing loanword katakana, pronunciation, and reading fluency.'
         url={`https://kanadojo.com/${locale}/kana/learn-katakana`}
-        learningResourceType='Interactive'
+        learningResourceType={['Interactive', 'Quiz', 'Game']}
         educationalLevel={['Beginner', 'Intermediate']}
-        teaches='Japanese Katakana reading, recognition, and pronunciation'
-        assesses='Katakana recognition speed and accuracy'
+        teaches='Japanese Katakana chart, reading, recognition, and pronunciation'
+        assesses='Katakana recognition speed, accuracy, and recall'
         timeRequired='PT20M'
         isAccessibleForFree={true}
         provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
       />
+      <FAQSchema faqs={commonKanaDOJOFAQs} />
       <KanaMenu filter='katakana' />
     </>
   );

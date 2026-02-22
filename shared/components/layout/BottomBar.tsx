@@ -1,12 +1,19 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faDiscord,
   faGithub,
   faPatreon,
 } from '@fortawesome/free-brands-svg-icons';
-import { Coffee, Palette, GitBranch, Type, LucideIcon } from 'lucide-react';
+import {
+  Coffee,
+  Palette,
+  GitBranch,
+  Type,
+  LucideIcon,
+  Star,
+} from 'lucide-react';
 import clsx from 'clsx';
 import { useClick } from '@/shared/hooks/useAudio';
 import {
@@ -52,6 +59,8 @@ const socialLinks: SocialLink[] = [
   // }
 ];
 
+const ENABLE_STATS_DESIGN = false; // Toggle to switch between old and new stats design
+
 const MobileBottomBar = () => {
   const { playClick } = useClick();
   const { theme, font } = useThemePreferences();
@@ -63,6 +72,21 @@ const MobileBottomBar = () => {
   const [isPatchNotesOpen, setIsPatchNotesOpen] = useState(false);
   const [isThemeOpen, setIsThemeOpen] = useState(false);
   const [isFontOpen, setIsFontOpen] = useState(false);
+  const [githubStars, setGithubStars] = useState<number | null>(null);
+  const [discordOnline, setDiscordOnline] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!ENABLE_STATS_DESIGN) return;
+
+    fetch('/api/community-stats')
+      .then(res => res.json())
+      .then(data => {
+        if (data.githubStars !== undefined) setGithubStars(data.githubStars);
+        if (data.discordOnline !== undefined)
+          setDiscordOnline(data.discordOnline);
+      })
+      .catch(err => console.error('Failed to fetch community stats:', err));
+  }, []);
 
   const handleClick = (url: string) => {
     playClick();
@@ -130,29 +154,49 @@ const MobileBottomBar = () => {
 
           return (
             <React.Fragment key={idx}>
-              {link.type === 'fontawesome' ? (
-                <FontAwesomeIcon
-                  icon={link.icon as IconDefinition}
-                  size='sm'
-                  className={clsx(
-                    baseIconClasses,
-                    pulseClasses,
-                    isPatreon && 'text-blue-500',
+              <div className='flex items-center gap-1.5'>
+                {link.type === 'fontawesome' ? (
+                  <FontAwesomeIcon
+                    icon={link.icon as IconDefinition}
+                    size='sm'
+                    className={clsx(
+                      baseIconClasses,
+                      pulseClasses,
+                      isPatreon && 'text-blue-500',
+                    )}
+                    onClick={() => handleClick(link.url)}
+                  />
+                ) : (
+                  <Icon
+                    size={16}
+                    className={clsx(
+                      baseIconClasses,
+                      pulseClasses,
+                      isDonate &&
+                        'fill-current text-red-500 motion-safe:animate-pulse',
+                    )}
+                    onClick={() => handleClick(link.url)}
+                  />
+                )}
+                {ENABLE_STATS_DESIGN &&
+                  link.icon === faGithub &&
+                  githubStars !== null && (
+                    <span className='ml-0.5 flex items-center gap-1 text-sm text-(--secondary-color) select-none'>
+                      <Star
+                        size={12}
+                        className='fill-yellow-400 text-yellow-500'
+                      />
+                      {githubStars.toLocaleString()}
+                    </span>
                   )}
-                  onClick={() => handleClick(link.url)}
-                />
-              ) : (
-                <Icon
-                  size={16}
-                  className={clsx(
-                    baseIconClasses,
-                    pulseClasses,
-                    isDonate &&
-                      'fill-current text-red-500 motion-safe:animate-pulse',
+                {ENABLE_STATS_DESIGN &&
+                  link.icon === faDiscord &&
+                  discordOnline !== null && (
+                    <span className='ml-0.5 text-sm text-(--secondary-color) select-none'>
+                      {discordOnline.toLocaleString()}
+                    </span>
                   )}
-                  onClick={() => handleClick(link.url)}
-                />
-              )}
+              </div>
               {idx === 1 && socialLinks.length > 2 && (
                 <span className='text-sm text-(--secondary-color) select-none'>
                   ~

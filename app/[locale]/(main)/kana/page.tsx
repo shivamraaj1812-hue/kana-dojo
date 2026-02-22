@@ -40,21 +40,21 @@ export default async function KanaPage({
         ]}
       />
       <CourseSchema
-        name='Japanese Hiragana and Katakana Course'
-        description='Master Japanese Hiragana and Katakana syllabaries with interactive games and exercises. Learn all 92 basic kana characters plus dakuon, yoon, and foreign sound variations through multiple training modes.'
+        name='Japanese Hiragana and Katakana Course for Beginners (KanaDojo)'
+        description='Master Japanese Hiragana and Katakana syllabaries with interactive games, drills, and quizzes. Learn all 92 basic kana plus dakuon, yoon, and katakana foreign sounds with feedback and progress tracking.'
         url={`https://kanadojo.com/${locale}/kana`}
         educationalLevel='Beginner'
         skillLevel='Beginner'
-        learningResourceType='Interactive Exercise and Games'
+        learningResourceType='Interactive Course, Exercise and Games'
       />
       <LearningResourceSchema
-        name='Interactive Kana Practice Games'
-        description='Practice Hiragana and Katakana with interactive quizzes, flashcards, and speed games. Test your recognition of all 46 basic characters plus dakuon and combination characters.'
+        name='Interactive Kana Practice Games and Quizzes'
+        description='Practice Hiragana and Katakana with interactive quizzes, flashcards, recognition drills, and speed games. Build kana reading accuracy for beginner Japanese study and JLPT preparation.'
         url={`https://kanadojo.com/${locale}/kana`}
-        learningResourceType='Game'
+        learningResourceType={['Game', 'Quiz', 'Interactive']}
         educationalLevel={['Beginner', 'Intermediate']}
-        teaches='Japanese Hiragana and Katakana Characters'
-        assesses='Kana Recognition and Reading Speed'
+        teaches='Japanese Hiragana and Katakana reading, recognition, and pronunciation'
+        assesses='Kana recognition accuracy, recall speed, and reading fluency'
         timeRequired='PT30M'
         isAccessibleForFree={true}
         provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}

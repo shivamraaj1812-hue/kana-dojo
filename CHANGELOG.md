@@ -7,7 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.15] - 2026-02-21
+
 ### Added
+
+- Interactive cursor trail effect (off by default, enable in Preferences)
+- Satisfying click effects across the application (off by default, enable in Preferences)
+
+## [0.1.14] - 2026-02-05
+
+### Added
+
+- Four new Japanese-themed premium wallpapers (Kyoto lanterns, Arashiyama bamboo, Nara temple sunrise, Osaka riverwalk nights)
+- Premium theme mapping for new wallpapers
+
+### Changed
 
 - Documentation improvements
 - GitHub issue and discussion templates
@@ -23,7 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `docs/PWA.md`
   - `docs/STORYBOOK.md`
 
-### Changed
+### Changed (previous)
 
 - Streamlined CONTRIBUTING.md setup instructions
 - Added translation section linking to docs/TRANSLATION_GUIDE.md
@@ -91,7 +105,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 | Version | Date       | Status   |
 | ------- | ---------- | -------- |
-| 0.1.13  | 2025-01-15 | Current  |
+| 0.1.15  | 2026-02-21 | Current  |
+| 0.1.14  | 2026-02-05 | Previous |
+| 0.1.13  | 2025-01-15 | Previous |
 | 0.1.12  | 2024-12-20 | Previous |
 | 0.1.11  | 2024-11-15 | Initial  |
 

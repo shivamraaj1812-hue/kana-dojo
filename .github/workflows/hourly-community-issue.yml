@@ -2,11 +2,11 @@ name: Create Community Contribution Issue
 
 on:
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       force_type:
-        description: 'Force issue type: theme | fact | proverb | trivia | grammar | animeQuote'
+        description: 'Force issue type: theme | fact | proverb | haiku | trivia | grammar | animeQuote | videoGameQuote | idiom | regionalDialect | falseFriend | culturalEtiquette | exampleSentence | commonMistake'
         required: false
         type: string
       dry_run:
@@ -71,6 +71,23 @@ jobs:
               return String(title).replace(' Add ', ` Add ${first}, ${second} `);
             }
 
+            function findRandomEligible(items, predicate) {
+              if (!Array.isArray(items) || items.length === 0) {
+                return null;
+              }
+
+              const start = Math.floor(Math.random() * items.length);
+              for (let offset = 0; offset < items.length; offset += 1) {
+                const index = (start + offset) % items.length;
+                const candidate = items[index];
+                if (predicate(candidate, index)) {
+                  return candidate;
+                }
+              }
+
+              return null;
+            }
+
             async function resolveMilestoneNumber() {
               const configuredMilestoneTitle = t.common.milestoneTitle;
               const fallbackMilestoneNumber = t.common.milestoneNumber;
@@ -105,33 +122,57 @@ jobs:
               return fallbackMilestoneNumber;
             }
 
-            const statePath = 'data/community-backlog/automation-state.json';
-            const themeBacklogPath = 'data/community-backlog/theme-backlog.json';
-            const factsBacklogPath = 'data/community-backlog/facts-backlog.json';
-            const proverbsBacklogPath = 'data/community-backlog/proverbs-backlog.json';
-            const triviaBacklogPath = 'data/community-backlog/trivia-backlog.json';
-            const grammarBacklogPath = 'data/community-backlog/grammar-backlog.json';
-            const animeQuotesBacklogPath = 'data/community-backlog/anime-quotes-backlog.json';
+            const statePath = 'community/backlog/automation-state.json';
+            const themeBacklogPath = 'community/backlog/theme-backlog.json';
+            const factsBacklogPath = 'community/backlog/facts-backlog.json';
+            const proverbsBacklogPath = 'community/backlog/proverbs-backlog.json';
+            const haikuBacklogPath = 'community/backlog/haiku-backlog.json';
+            const triviaBacklogPath = 'community/backlog/trivia-backlog.json';
+            const grammarBacklogPath = 'community/backlog/grammar-backlog.json';
+            const animeQuotesBacklogPath = 'community/backlog/anime-quotes-backlog.json';
+            const idiomsBacklogPath = 'community/backlog/idioms-backlog.json';
+            const regionalDialectsBacklogPath = 'community/backlog/regional-dialects-backlog.json';
+            const falseFriendsBacklogPath = 'community/backlog/false-friends-backlog.json';
+            const culturalEtiquetteBacklogPath = 'community/backlog/cultural-etiquette-backlog.json';
+            const exampleSentencesBacklogPath = 'community/backlog/example-sentences-backlog.json';
+            const commonMistakesBacklogPath = 'community/backlog/common-mistakes-backlog.json';
+            const videoGameQuotesBacklogPath = 'community/backlog/video-game-quotes-backlog.json';
 
-            const themesSourcePath = 'data/community-content/community-themes.json';
-            const factsSourcePath = 'data/community-content/japan-facts.json';
-            const proverbsSourcePath = 'data/community-content/japanese-proverbs.json';
+            const themesSourcePath = 'community/content/community-themes.json';
+            const factsSourcePath = 'community/content/japan-facts.json';
+            const proverbsSourcePath = 'community/content/japanese-proverbs.json';
+            const haikuSourcePath = 'community/content/japanese-haiku.json';
             const triviaSourcePaths = {
-              easy: 'data/community-content/japan-trivia-easy.json',
-              medium: 'data/community-content/japan-trivia-medium.json',
-              hard: 'data/community-content/japan-trivia-hard.json'
+              easy: 'community/content/japan-trivia-easy.json',
+              medium: 'community/content/japan-trivia-medium.json',
+              hard: 'community/content/japan-trivia-hard.json'
             };
-            const triviaLegacyPath = 'data/community-content/japan-trivia.json';
-            const grammarSourcePath = 'data/community-content/japanese-grammar.json';
-            const animeQuotesSourcePath = 'data/community-content/anime-quotes.json';
+            const triviaLegacyPath = 'community/content/japan-trivia.json';
+            const grammarSourcePath = 'community/content/japanese-grammar.json';
+            const animeQuotesSourcePath = 'community/content/anime-quotes.json';
+            const idiomsSourcePath = 'community/content/japanese-idioms.json';
+            const regionalDialectsSourcePath = 'community/content/japanese-regional-dialects.json';
+            const falseFriendsSourcePath = 'community/content/japanese-false-friends.json';
+            const culturalEtiquetteSourcePath = 'community/content/japanese-cultural-etiquette.json';
+            const exampleSentencesSourcePath = 'community/content/japanese-example-sentences.json';
+            const commonMistakesSourcePath = 'community/content/japanese-common-mistakes.json';
+            const videoGameQuotesSourcePath = 'community/content/japanese-videogame-quotes.json';
 
             let state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
             const themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             const facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
             const proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
+            const haiku = JSON.parse(fs.readFileSync(haikuBacklogPath, 'utf8'));
             const trivia = JSON.parse(fs.readFileSync(triviaBacklogPath, 'utf8'));
             const grammar = JSON.parse(fs.readFileSync(grammarBacklogPath, 'utf8'));
             const animeQuotes = JSON.parse(fs.readFileSync(animeQuotesBacklogPath, 'utf8'));
+            const idioms = JSON.parse(fs.readFileSync(idiomsBacklogPath, 'utf8'));
+            const regionalDialects = JSON.parse(fs.readFileSync(regionalDialectsBacklogPath, 'utf8'));
+            const falseFriends = JSON.parse(fs.readFileSync(falseFriendsBacklogPath, 'utf8'));
+            const culturalEtiquette = JSON.parse(fs.readFileSync(culturalEtiquetteBacklogPath, 'utf8'));
+            const exampleSentences = JSON.parse(fs.readFileSync(exampleSentencesBacklogPath, 'utf8'));
+            const commonMistakes = JSON.parse(fs.readFileSync(commonMistakesBacklogPath, 'utf8'));
+            const videoGameQuotes = JSON.parse(fs.readFileSync(videoGameQuotesBacklogPath, 'utf8'));
 
             if (typeof state.consecutiveNoIssueRuns !== 'number') {
               state.consecutiveNoIssueRuns = 0;
@@ -154,6 +195,15 @@ jobs:
                 existingProverbs = JSON.parse(fs.readFileSync(proverbsSourcePath, 'utf8'));
               } catch (e) {
                 console.log(`Could not parse ${proverbsSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingHaiku = [];
+            if (fs.existsSync(haikuSourcePath)) {
+              try {
+                existingHaiku = JSON.parse(fs.readFileSync(haikuSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${haikuSourcePath}: ${e.message}`);
               }
             }
 
@@ -193,6 +243,69 @@ jobs:
               }
             }
 
+            let existingIdioms = [];
+            if (fs.existsSync(idiomsSourcePath)) {
+              try {
+                existingIdioms = JSON.parse(fs.readFileSync(idiomsSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${idiomsSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingRegionalDialects = [];
+            if (fs.existsSync(regionalDialectsSourcePath)) {
+              try {
+                existingRegionalDialects = JSON.parse(fs.readFileSync(regionalDialectsSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${regionalDialectsSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingFalseFriends = [];
+            if (fs.existsSync(falseFriendsSourcePath)) {
+              try {
+                existingFalseFriends = JSON.parse(fs.readFileSync(falseFriendsSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${falseFriendsSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingCulturalEtiquette = [];
+            if (fs.existsSync(culturalEtiquetteSourcePath)) {
+              try {
+                existingCulturalEtiquette = JSON.parse(fs.readFileSync(culturalEtiquetteSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${culturalEtiquetteSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingExampleSentences = [];
+            if (fs.existsSync(exampleSentencesSourcePath)) {
+              try {
+                existingExampleSentences = JSON.parse(fs.readFileSync(exampleSentencesSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${exampleSentencesSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingCommonMistakes = [];
+            if (fs.existsSync(commonMistakesSourcePath)) {
+              try {
+                existingCommonMistakes = JSON.parse(fs.readFileSync(commonMistakesSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${commonMistakesSourcePath}: ${e.message}`);
+              }
+            }
+
+            let existingVideoGameQuotes = [];
+            if (fs.existsSync(videoGameQuotesSourcePath)) {
+              try {
+                existingVideoGameQuotes = JSON.parse(fs.readFileSync(videoGameQuotesSourcePath, 'utf8'));
+              } catch (e) {
+                console.log(`Could not parse ${videoGameQuotesSourcePath}: ${e.message}`);
+              }
+            }
+
             let themesSourceContent = '';
             let existingThemes = [];
             if (fs.existsSync(themesSourcePath)) {
@@ -221,7 +334,7 @@ jobs:
               }
             }
 
-            const defaultOrder = ['theme', 'fact', 'proverb', 'trivia', 'grammar', 'animeQuote'];
+            const defaultOrder = ['theme', 'fact', 'proverb', 'haiku', 'trivia', 'grammar', 'animeQuote', 'videoGameQuote', 'idiom', 'regionalDialect', 'falseFriend', 'culturalEtiquette', 'exampleSentence', 'commonMistake'];
             const typeOrder = forceType && defaultOrder.includes(forceType)
               ? [forceType]
               : defaultOrder;
@@ -238,7 +351,7 @@ jobs:
 
               if (nextType === 'theme') {
               // Skip items that are already issued OR completed OR already exist in main
-              item = themes.find(function(th) {
+              item = findRandomEligible(themes, function(th) {
                 if (th.issued || th.completed) {
                   return false;
                 }
@@ -298,7 +411,7 @@ jobs:
               
               } else if (nextType === 'fact') {
               // Skip items that are already issued OR completed OR already exist in main
-              item = facts.find(function(f) {
+              item = findRandomEligible(facts, function(f) {
                 if (f.issued || f.completed) {
                   return false;
                 }
@@ -351,7 +464,7 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'proverb') {
               // Proverb
-              item = proverbs.find(function(p) {
+              item = findRandomEligible(proverbs, function(p) {
                 if (p.issued || p.completed) {
                   return false;
                 }
@@ -412,8 +525,64 @@ jobs:
               proverbs[proverbIndex].issued = true;
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
               backlogChanged = true;
+              } else if (nextType === 'haiku') {
+              item = findRandomEligible(haiku, function(h) {
+                if (h.issued || h.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingHaiku)) {
+                  const exists = existingHaiku.some(function(eh) {
+                    if (!eh || typeof eh !== 'object') {
+                      return false;
+                    }
+                    return eh.japanese === h.japanese && eh.romaji === h.romaji && eh.english === h.english;
+                  });
+                  if (exists) {
+                    const haikuIdx = haiku.findIndex(function(hi) { return hi.id === h.id; });
+                    haiku[haikuIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more haiku available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateHaiku = await hasOpenIssueForQuery(`"Classic Japanese Haiku" "${item.id}"`);
+              if (duplicateHaiku) {
+                console.log(`Issue already exists for haiku #${item.id}: Marking as issued and skipping.`);
+                const haikuIdx = haiku.findIndex(function(h) { return h.id === item.id; });
+                haiku[haikuIdx].issued = true;
+                fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.haiku;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "poet": "${item.poet}",\n  "season": "${item.season}",\n  "kigo": "${item.kigo}",\n  "notes": "${item.notes}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.haikuHeader}\n\n> ${item.japanese.replace(/\n/g, '\n> ')}\n\n**Romaji:** ${item.romaji}  \n**English:** ${item.english}  \n**Poet:** ${item.poet}  \n**Season:** ${item.season}  \n**Kigo:** ${item.kigo}  \n**Notes:** ${item.notes}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const haikuIndex = haiku.findIndex(function(h) { return h.id === item.id; });
+              haiku[haikuIndex].issued = true;
+              fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
+              backlogChanged = true;
               } else if (nextType === 'trivia') {
-              item = trivia.find(function(q) {
+              item = findRandomEligible(trivia, function(q) {
                 if (q.issued || q.completed) {
                   return false;
                 }
@@ -484,7 +653,7 @@ jobs:
               backlogChanged = true;
               } else if (nextType === 'grammar') {
               // Grammar
-              item = grammar.find(function(g) {
+              item = findRandomEligible(grammar, function(g) {
                 if (g.issued || g.completed) {
                   return false;
                 }
@@ -536,9 +705,9 @@ jobs:
               grammar[grammarIndex].issued = true;
               fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
               backlogChanged = true;
-              } else {
+              } else if (nextType === 'animeQuote') {
               // Anime Quote
-              item = animeQuotes.find(function(q) {
+              item = findRandomEligible(animeQuotes, function(q) {
                 if (q.issued || q.completed) {
                   return false;
                 }
@@ -603,6 +772,400 @@ jobs:
               animeQuotes[quoteIndex].issued = true;
               fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));
               backlogChanged = true;
+              } else if (nextType === 'videoGameQuote') {
+              item = findRandomEligible(videoGameQuotes, function(q) {
+                if (q.issued || q.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingVideoGameQuotes)) {
+                  const exists = existingVideoGameQuotes.some(function(eq) {
+                    if (!eq || typeof eq !== 'object') {
+                      return false;
+                    }
+                    return eq.japanese === q.japanese
+                      && eq.romaji === q.romaji
+                      && eq.english === q.english
+                      && eq.game === q.game
+                      && eq.character === q.character;
+                  });
+                  if (exists) {
+                    const quoteIdx = videoGameQuotes.findIndex(function(qi) { return qi.id === q.id; });
+                    videoGameQuotes[quoteIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more video game quotes available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateQuote = await hasOpenIssueForQuery(`"Video Game Quote" "${item.id}"`);
+
+              if (duplicateQuote) {
+                const quoteIdx = videoGameQuotes.findIndex(function(q) { return q.id === item.id; });
+                videoGameQuotes[quoteIdx].issued = true;
+                fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.videoGameQuote;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "game": "${item.game}",\n  "character": "${item.character}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.gameQuoteHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n**Game:** ${item.game}  \n**Character:** ${item.character}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const quoteIndex = videoGameQuotes.findIndex(function(q) { return q.id === item.id; });
+              videoGameQuotes[quoteIndex].issued = true;
+              fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
+              backlogChanged = true;
+              } else if (nextType === 'idiom') {
+              item = findRandomEligible(idioms, function(i) {
+                if (i.issued || i.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingIdioms)) {
+                  const exists = existingIdioms.some(function(ei) {
+                    if (!ei || typeof ei !== 'object') {
+                      return false;
+                    }
+                    return ei.japanese === i.japanese && ei.romaji === i.romaji && ei.english === i.english;
+                  });
+                  if (exists) {
+                    const idiomIdx = idioms.findIndex(function(ii) { return ii.id === i.id; });
+                    idioms[idiomIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more idioms available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(idiomsBacklogPath, JSON.stringify(idioms, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateIdiom = await hasOpenIssueForQuery(`"Japanese Idiom" "${item.id}"`);
+
+              if (duplicateIdiom) {
+                console.log(`Issue already exists for idiom #${item.id}: Marking as issued and skipping.`);
+                const idiomIdx = idioms.findIndex(function(i) { return i.id === item.id; });
+                idioms[idiomIdx].issued = true;
+                fs.writeFileSync(idiomsBacklogPath, JSON.stringify(idioms, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.idiom;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "meaning": "${item.meaning}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.idiomHeader}\n\n| Japanese | Romaji | English |\n|----------|--------|---------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} |\n\n> **Meaning:** ${item.meaning}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const idiomIndex = idioms.findIndex(function(i) { return i.id === item.id; });
+              idioms[idiomIndex].issued = true;
+              fs.writeFileSync(idiomsBacklogPath, JSON.stringify(idioms, null, 2));
+              backlogChanged = true;
+              } else if (nextType === 'regionalDialect') {
+              item = findRandomEligible(regionalDialects, function(d) {
+                if (d.issued || d.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingRegionalDialects)) {
+                  const exists = existingRegionalDialects.some(function(ed) {
+                    if (!ed || typeof ed !== 'object') {
+                      return false;
+                    }
+                    return ed.dialect === d.dialect && ed.standardJapanese === d.standardJapanese && ed.region === d.region;
+                  });
+                  if (exists) {
+                    const dialectIdx = regionalDialects.findIndex(function(di) { return di.id === d.id; });
+                    regionalDialects[dialectIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more regional dialect entries available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(regionalDialectsBacklogPath, JSON.stringify(regionalDialects, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateDialect = await hasOpenIssueForQuery(`"Regional Dialect Entry" "${item.id}"`);
+
+              if (duplicateDialect) {
+                console.log(`Issue already exists for regional dialect #${item.id}: Marking as issued and skipping.`);
+                const dialectIdx = regionalDialects.findIndex(function(d) { return d.id === item.id; });
+                regionalDialects[dialectIdx].issued = true;
+                fs.writeFileSync(regionalDialectsBacklogPath, JSON.stringify(regionalDialects, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.regionalDialect;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "dialect": "${item.dialect}",\n  "standardJapanese": "${item.standardJapanese}",\n  "english": "${item.english}",\n  "region": "${item.region}",\n  "note": "${item.note}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.dialectHeader}\n\n| Dialect | Standard Japanese | English | Region |\n|---------|-------------------|---------|--------|\n| **${item.dialect}** | ${item.standardJapanese} | ${item.english} | ${item.region} |\n\n> **Note:** ${item.note}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const dialectIndex = regionalDialects.findIndex(function(d) { return d.id === item.id; });
+              regionalDialects[dialectIndex].issued = true;
+              fs.writeFileSync(regionalDialectsBacklogPath, JSON.stringify(regionalDialects, null, 2));
+              backlogChanged = true;
+            } else if (nextType === 'falseFriend') {
+              item = findRandomEligible(falseFriends, function(f) {
+                if (f.issued || f.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingFalseFriends)) {
+                  const exists = existingFalseFriends.some(function(ef) {
+                    if (!ef || typeof ef !== 'object') {
+                      return false;
+                    }
+                    return ef.termA === f.termA && ef.termB === f.termB;
+                  });
+                  if (exists) {
+                    const falseFriendIdx = falseFriends.findIndex(function(fi) { return fi.id === f.id; });
+                    falseFriends[falseFriendIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more false friends available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(falseFriendsBacklogPath, JSON.stringify(falseFriends, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateFalseFriend = await hasOpenIssueForQuery(`"Japanese False Friend" "${item.id}"`);
+              if (duplicateFalseFriend) {
+                const falseFriendIdx = falseFriends.findIndex(function(f) { return f.id === item.id; });
+                falseFriends[falseFriendIdx].issued = true;
+                fs.writeFileSync(falseFriendsBacklogPath, JSON.stringify(falseFriends, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.falseFriend;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "termA": "${item.termA}",\n  "termB": "${item.termB}",\n  "explanation": "${item.explanation}",\n  "example": "${item.example}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.falseFriendHeader}\n\n**Term A:** ${item.termA}  \n**Term B:** ${item.termB}\n\n> **Explanation:** ${item.explanation}\n> **Example:** ${item.example}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const falseFriendIndex = falseFriends.findIndex(function(f) { return f.id === item.id; });
+              falseFriends[falseFriendIndex].issued = true;
+              fs.writeFileSync(falseFriendsBacklogPath, JSON.stringify(falseFriends, null, 2));
+              backlogChanged = true;
+            } else if (nextType === 'culturalEtiquette') {
+              item = findRandomEligible(culturalEtiquette, function(e) {
+                if (e.issued || e.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingCulturalEtiquette)) {
+                  const exists = existingCulturalEtiquette.some(function(ec) {
+                    if (!ec || typeof ec !== 'object') {
+                      return false;
+                    }
+                    return ec.situation === e.situation && ec.do === e.do && ec.dont === e.dont;
+                  });
+                  if (exists) {
+                    const etiquetteIdx = culturalEtiquette.findIndex(function(ei) { return ei.id === e.id; });
+                    culturalEtiquette[etiquetteIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more cultural etiquette entries available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(culturalEtiquetteBacklogPath, JSON.stringify(culturalEtiquette, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateEtiquette = await hasOpenIssueForQuery(`"Cultural Etiquette Tip" "${item.id}"`);
+              if (duplicateEtiquette) {
+                const etiquetteIdx = culturalEtiquette.findIndex(function(e) { return e.id === item.id; });
+                culturalEtiquette[etiquetteIdx].issued = true;
+                fs.writeFileSync(culturalEtiquetteBacklogPath, JSON.stringify(culturalEtiquette, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.culturalEtiquette;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "situation": "${item.situation}",\n  "do": "${item.do}",\n  "dont": "${item.dont}",\n  "note": "${item.note}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.etiquetteHeader}\n\n**Situation:** ${item.situation}\n\n- Do: ${item.do}\n- Avoid: ${item.dont}\n\n> **Note:** ${item.note}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const etiquetteIndex = culturalEtiquette.findIndex(function(e) { return e.id === item.id; });
+              culturalEtiquette[etiquetteIndex].issued = true;
+              fs.writeFileSync(culturalEtiquetteBacklogPath, JSON.stringify(culturalEtiquette, null, 2));
+              backlogChanged = true;
+            } else if (nextType === 'exampleSentence') {
+              item = findRandomEligible(exampleSentences, function(e) {
+                if (e.issued || e.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingExampleSentences)) {
+                  const exists = existingExampleSentences.some(function(es) {
+                    if (!es || typeof es !== 'object') {
+                      return false;
+                    }
+                    return es.japanese === e.japanese && es.romaji === e.romaji && es.english === e.english;
+                  });
+                  if (exists) {
+                    const sentenceIdx = exampleSentences.findIndex(function(si) { return si.id === e.id; });
+                    exampleSentences[sentenceIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more example sentences available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateSentence = await hasOpenIssueForQuery(`"Example Sentence" "${item.id}"`);
+              if (duplicateSentence) {
+                const sentenceIdx = exampleSentences.findIndex(function(e) { return e.id === item.id; });
+                exampleSentences[sentenceIdx].issued = true;
+                fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.exampleSentence;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "jlpt": "${item.jlpt}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.sentenceHeader}\n\n| Japanese | Romaji | English | JLPT |\n|----------|--------|---------|------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} | ${item.jlpt} |\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const sentenceIndex = exampleSentences.findIndex(function(e) { return e.id === item.id; });
+              exampleSentences[sentenceIndex].issued = true;
+              fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
+              backlogChanged = true;
+            } else if (nextType === 'commonMistake') {
+              item = findRandomEligible(commonMistakes, function(m) {
+                if (m.issued || m.completed) {
+                  return false;
+                }
+                if (Array.isArray(existingCommonMistakes)) {
+                  const exists = existingCommonMistakes.some(function(em) {
+                    if (!em || typeof em !== 'object') {
+                      return false;
+                    }
+                    return em.wrong === m.wrong && em.correct === m.correct;
+                  });
+                  if (exists) {
+                    const mistakeIdx = commonMistakes.findIndex(function(mi) { return mi.id === m.id; });
+                    commonMistakes[mistakeIdx].completed = true;
+                    backlogChanged = true;
+                    return false;
+                  }
+                }
+                return true;
+              });
+
+              if (!item) {
+                console.log('No more common mistakes available in backlog.');
+                if (backlogChanged) {
+                  fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
+                }
+                continue;
+              }
+
+              const duplicateMistake = await hasOpenIssueForQuery(`"Common Learner Mistake" "${item.id}"`);
+              if (duplicateMistake) {
+                const mistakeIdx = commonMistakes.findIndex(function(m) { return m.id === item.id; });
+                commonMistakes[mistakeIdx].issued = true;
+                fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
+                backlogChanged = true;
+                continue;
+              }
+
+              const tmpl = t.commonMistake;
+              const common = t.common;
+              issueTitle = tmpl.title
+                .replace('{emoji}', pickEmoji())
+                .replace('{id}', item.id);
+              issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
+
+              const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
+              const codeBlock = `\`\`\`json\n{\n  "wrong": "${item.wrong}",\n  "correct": "${item.correct}",\n  "explanation": "${item.explanation}"\n}\n\`\`\``;
+
+              issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.mistakeHeader}\n\n**Wrong:** ${item.wrong}\n\n**Correct:** ${item.correct}\n\n> **Why:** ${item.explanation}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
+
+              const mistakeIndex = commonMistakes.findIndex(function(m) { return m.id === item.id; });
+              commonMistakes[mistakeIndex].issued = true;
+              fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
+              backlogChanged = true;
             }
 
               if (issueTitle && issueBody && item) {
@@ -612,7 +1175,7 @@ jobs:
             }
 
             if (!selectedType) {
-              console.log('No available items found across theme/fact/proverb backlogs.');
+              console.log('No available items found across all community backlogs.');
               state.lastRun = new Date().toISOString();
               state.consecutiveNoIssueRuns = (state.consecutiveNoIssueRuns || 0) + 1;
               fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
@@ -711,7 +1274,7 @@ jobs:
       - name: Commit backlog updates
         if: steps.create-issue.outputs.should_commit == 'true'
         run: |
-          git add data/community-backlog/
+          git add community/backlog/
           if git diff --cached --quiet; then
             echo "No backlog changes to commit."
             exit 0

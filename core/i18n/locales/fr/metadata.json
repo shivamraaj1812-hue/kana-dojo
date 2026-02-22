@@ -42,6 +42,36 @@
     "description": "Apprenez les caractères Kanji japonais organisés par niveaux JLPT. Pratiquez avec des exercices interactifs, suivez vos progrès et maîtrisez des milliers de kanji.",
     "keywords": "kanji, apprendre kanji, kanji japonais, kanji JLPT, pratique kanji, kanji par niveau"
   },
+  "kanjiJlptN5": {
+    "title": "JLPT N5 Kanji - Liste et Pratique | KanaDojo",
+    "titleShort": "JLPT N5 Kanji",
+    "description": "Pratiquez les kanji JLPT N5 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "jlpt n5 kanji, kanji n5, liste kanji n5, pratique kanji n5, apprendre kanji n5"
+  },
+  "kanjiJlptN4": {
+    "title": "JLPT N4 Kanji - Liste et Pratique | KanaDojo",
+    "titleShort": "JLPT N4 Kanji",
+    "description": "Pratiquez les kanji JLPT N4 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "jlpt n4 kanji, kanji n4, liste kanji n4, pratique kanji n4, apprendre kanji n4"
+  },
+  "kanjiJlptN3": {
+    "title": "JLPT N3 Kanji - Liste et Pratique | KanaDojo",
+    "titleShort": "JLPT N3 Kanji",
+    "description": "Pratiquez les kanji JLPT N3 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "jlpt n3 kanji, kanji n3, liste kanji n3, pratique kanji n3, apprendre kanji n3"
+  },
+  "kanjiJlptN2": {
+    "title": "JLPT N2 Kanji - Liste et Pratique | KanaDojo",
+    "titleShort": "JLPT N2 Kanji",
+    "description": "Pratiquez les kanji JLPT N2 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "jlpt n2 kanji, kanji n2, liste kanji n2, pratique kanji n2, apprendre kanji n2"
+  },
+  "kanjiJlptN1": {
+    "title": "JLPT N1 Kanji - Liste et Pratique | KanaDojo",
+    "titleShort": "JLPT N1 Kanji",
+    "description": "Pratiquez les kanji JLPT N1 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "jlpt n1 kanji, kanji n1, liste kanji n1, pratique kanji n1, apprendre kanji n1"
+  },
   "kanjiBlitz": {
     "title": "Kanji Blitz - Testez Votre Vitesse de Reconnaissance des Kanji",
     "titleShort": "Kanji Blitz",
@@ -59,6 +89,36 @@
     "titleShort": "Vocabulary Dojo",
     "description": "Développez votre vocabulaire japonais avec des mots organisés par niveaux JLPT. Exercices interactifs, phrases exemples et suivi des progrès.",
     "keywords": "vocabulaire japonais, apprendre mots japonais, vocabulaire JLPT, pratique vocabulaire, liste mots japonais, cartes mémoire vocabulaire, phrases japonaises, étude mots JLPT, vocabulaire par niveau, application vocabulaire japonais"
+  },
+  "vocabularyJlptN5": {
+    "title": "Vocabulaire JLPT N5 - Liste et Pratique | KanaDojo",
+    "titleShort": "Vocabulaire JLPT N5",
+    "description": "Pratiquez le vocabulaire JLPT N5 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "vocabulaire jlpt n5, liste mots n5, pratique vocabulaire n5, mots japonais n5"
+  },
+  "vocabularyJlptN4": {
+    "title": "Vocabulaire JLPT N4 - Liste et Pratique | KanaDojo",
+    "titleShort": "Vocabulaire JLPT N4",
+    "description": "Pratiquez le vocabulaire JLPT N4 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "vocabulaire jlpt n4, liste mots n4, pratique vocabulaire n4, mots japonais n4"
+  },
+  "vocabularyJlptN3": {
+    "title": "Vocabulaire JLPT N3 - Liste et Pratique | KanaDojo",
+    "titleShort": "Vocabulaire JLPT N3",
+    "description": "Pratiquez le vocabulaire JLPT N3 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "vocabulaire jlpt n3, liste mots n3, pratique vocabulaire n3, mots japonais n3"
+  },
+  "vocabularyJlptN2": {
+    "title": "Vocabulaire JLPT N2 - Liste et Pratique | KanaDojo",
+    "titleShort": "Vocabulaire JLPT N2",
+    "description": "Pratiquez le vocabulaire JLPT N2 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "vocabulaire jlpt n2, liste mots n2, pratique vocabulaire n2, mots japonais n2"
+  },
+  "vocabularyJlptN1": {
+    "title": "Vocabulaire JLPT N1 - Liste et Pratique | KanaDojo",
+    "titleShort": "Vocabulaire JLPT N1",
+    "description": "Pratiquez le vocabulaire JLPT N1 avec des exercices interactifs, sélection rapide et suivi des progrès.",
+    "keywords": "vocabulaire jlpt n1, liste mots n1, pratique vocabulaire n1, mots japonais n1"
   },
   "vocabularyBlitz": {
     "title": "Vocabulary Blitz - Testez Votre Vitesse en Vocabulaire Japonais",

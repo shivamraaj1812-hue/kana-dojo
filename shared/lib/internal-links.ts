@@ -26,15 +26,75 @@ export const mainLinks = {
     text: 'Kana',
     title: 'Learn Hiragana and Katakana',
   },
+  kanaHiragana: {
+    href: '/kana/learn-hiragana',
+    text: 'Learn Hiragana',
+    title: 'Learn Hiragana with Interactive Practice',
+  },
+  kanaKatakana: {
+    href: '/kana/learn-katakana',
+    text: 'Learn Katakana',
+    title: 'Learn Katakana with Interactive Practice',
+  },
   kanji: {
     href: '/kanji',
     text: 'Kanji',
     title: 'Learn Japanese Kanji by JLPT Level',
   },
+  kanjiN5: {
+    href: '/kanji/jlpt-n5',
+    text: 'JLPT N5 Kanji',
+    title: 'Practice JLPT N5 Kanji',
+  },
+  kanjiN4: {
+    href: '/kanji/jlpt-n4',
+    text: 'JLPT N4 Kanji',
+    title: 'Practice JLPT N4 Kanji',
+  },
+  kanjiN3: {
+    href: '/kanji/jlpt-n3',
+    text: 'JLPT N3 Kanji',
+    title: 'Practice JLPT N3 Kanji',
+  },
+  kanjiN2: {
+    href: '/kanji/jlpt-n2',
+    text: 'JLPT N2 Kanji',
+    title: 'Practice JLPT N2 Kanji',
+  },
+  kanjiN1: {
+    href: '/kanji/jlpt-n1',
+    text: 'JLPT N1 Kanji',
+    title: 'Practice JLPT N1 Kanji',
+  },
   vocabulary: {
     href: '/vocabulary',
     text: 'Vocabulary',
     title: 'Learn Japanese Vocabulary',
+  },
+  vocabularyN5: {
+    href: '/vocabulary/jlpt-n5',
+    text: 'JLPT N5 Vocabulary',
+    title: 'Practice JLPT N5 Vocabulary',
+  },
+  vocabularyN4: {
+    href: '/vocabulary/jlpt-n4',
+    text: 'JLPT N4 Vocabulary',
+    title: 'Practice JLPT N4 Vocabulary',
+  },
+  vocabularyN3: {
+    href: '/vocabulary/jlpt-n3',
+    text: 'JLPT N3 Vocabulary',
+    title: 'Practice JLPT N3 Vocabulary',
+  },
+  vocabularyN2: {
+    href: '/vocabulary/jlpt-n2',
+    text: 'JLPT N2 Vocabulary',
+    title: 'Practice JLPT N2 Vocabulary',
+  },
+  vocabularyN1: {
+    href: '/vocabulary/jlpt-n1',
+    text: 'JLPT N1 Vocabulary',
+    title: 'Practice JLPT N1 Vocabulary',
   },
   translate: {
     href: '/translate',
@@ -229,6 +289,8 @@ export function getRelatedLinks(currentPath: string): InternalLink[] {
   // Kana-related pages
   if (currentPath.includes('kana') || currentPath.includes('hiragana')) {
     related.push(
+      mainLinks.kanaHiragana,
+      mainLinks.kanaKatakana,
       learningLinks.hiraganaPractice,
       learningLinks.katakanaPractice,
       learningLinks.kanaBlitz,
@@ -240,6 +302,9 @@ export function getRelatedLinks(currentPath: string): InternalLink[] {
     related.push(
       learningLinks.kanjiPractice,
       learningLinks.kanjiBlitz,
+      mainLinks.kanjiN5,
+      mainLinks.kanjiN4,
+      mainLinks.kanjiN3,
       jlptLinks.n5,
       jlptLinks.n4,
     );
@@ -247,7 +312,14 @@ export function getRelatedLinks(currentPath: string): InternalLink[] {
 
   // Vocabulary-related pages
   if (currentPath.includes('vocabulary') || currentPath.includes('vocab')) {
-    related.push(learningLinks.vocabularyBlitz, jlptLinks.n5, mainLinks.kanji);
+    related.push(
+      learningLinks.vocabularyBlitz,
+      mainLinks.vocabularyN5,
+      mainLinks.vocabularyN4,
+      mainLinks.vocabularyN3,
+      jlptLinks.n5,
+      mainLinks.kanji,
+    );
   }
 
   // JLPT-related pages

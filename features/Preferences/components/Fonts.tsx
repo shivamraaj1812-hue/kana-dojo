@@ -32,11 +32,12 @@ const Fonts = () => {
         'flex-1',
       )}
       style={{
-        outline:
+        outline: 'none',
+        backgroundColor:
           fontObj.name === currentFont
-            ? '3px solid var(--secondary-color)'
-            : 'none',
-        transition: 'background-color 275ms',
+            ? 'var(--secondary-color)'
+            : 'var(--card-color)',
+        transition: 'background-color 275ms, color 275ms',
       }}
       onClick={() => playClick()}
     >
@@ -49,12 +50,28 @@ const Fonts = () => {
         className='hidden'
       />
       <p className={clsx('text-center text-xl', fontObj.font.className)}>
-        {/* <span className='text-(--secondary-color)'>
-          {fontObj.name === currentFont ? '\u2B24 ' : ''}
-        </span> */}
-        <span className=''>{fontObj.name}</span>
+        <span
+          style={{
+            color:
+              fontObj.name === currentFont
+                ? 'var(--main-color)'
+                : 'var(--secondary-color)',
+          }}
+        >
+          {fontObj.name}
+        </span>
         {fontObj.name === 'Zen Maru Gothic' && ' (default)'}
-        <span className='ml-2 text-(--secondary-color)'>かな道場</span>
+        <span
+          className='ml-2'
+          style={{
+            color:
+              fontObj.name === currentFont
+                ? 'var(--card-color)'
+                : 'var(--secondary-color)',
+          }}
+        >
+          かな道場
+        </span>
       </p>
     </label>
   );

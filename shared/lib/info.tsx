@@ -55,46 +55,6 @@ export default function translationGen(t: (key: string) => string) {
         </>
       ),
     },
-    '/kana/learn-hiragana': {
-      header: (
-        <span className='flex items-center gap-2'>
-          <span className='text-2xl'>ひ</span>
-          <span>Welcome to the Hiragana dojo!</span>
-        </span>
-      ),
-      content: (
-        <>
-          <p className='text-lg text-(--secondary-color)'>
-            Focus on Hiragana only. This view filters the kana sets to the
-            complete Hiragana chart including dakuon and yoon.
-          </p>
-          <p className='text-lg text-(--secondary-color)'>
-            Select at least 1 hiragana group, pick your training mode, then hit{' '}
-            <b>Go!</b> to start practicing.
-          </p>
-        </>
-      ),
-    },
-    '/kana/learn-katakana': {
-      header: (
-        <span className='flex items-center gap-2'>
-          <span className='text-2xl'>カ</span>
-          <span>Welcome to the Katakana dojo!</span>
-        </span>
-      ),
-      content: (
-        <>
-          <p className='text-lg text-(--secondary-color)'>
-            Focus on Katakana only. This view filters the kana sets to the full
-            Katakana chart including dakuon, yoon, and foreign sounds.
-          </p>
-          <p className='text-lg text-(--secondary-color)'>
-            Select at least 1 katakana group, pick your training mode, then hit{' '}
-            <b>Go!</b> to start practicing.
-          </p>
-        </>
-      ),
-    },
     '/kanji': {
       header: <span>Welcome to the kanji dojo!</span>,
       content: (

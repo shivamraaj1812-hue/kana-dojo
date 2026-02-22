@@ -1,0 +1,1082 @@
+[
+  {
+    "id": 1,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 1.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 2,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 2.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 3,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 3.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 4,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 4.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 5,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 5.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 6,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 6.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 7,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 7.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 8,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 8.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 9,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 9.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 10,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 10.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 11,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 11.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 12,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 12.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 13,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 13.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 14,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 14.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 15,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 15.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 16,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 16.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 17,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 17.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 18,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 18.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 19,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 19.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 20,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 20.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 21,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 21.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 22,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 22.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 23,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 23.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 24,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 24.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 25,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 25.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 26,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 26.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 27,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 27.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 28,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 28.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 29,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 29.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 30,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 30.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 31,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 31.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 32,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 32.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 33,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 33.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 34,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 34.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 35,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 35.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 36,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 36.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 37,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 37.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 38,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 38.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 39,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 39.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 40,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 40.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 41,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 41.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 42,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 42.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 43,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 43.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 44,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 44.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 45,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 45.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 46,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 46.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 47,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 47.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 48,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 48.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 49,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 49.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 50,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 50.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 51,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 51.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 52,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 52.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 53,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 53.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 54,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 54.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 55,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 55.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 56,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 56.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 57,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 57.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 58,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 58.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 59,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 59.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 60,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 60.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 61,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 61.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 62,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 62.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 63,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 63.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 64,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 64.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 65,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 65.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 66,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 66.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 67,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 67.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 68,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 68.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 69,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 69.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 70,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 70.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 71,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 71.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 72,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 72.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 73,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 73.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 74,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 74.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 75,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 75.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 76,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 76.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 77,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 77.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 78,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 78.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 79,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 79.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 80,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 80.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 81,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 81.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 82,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 82.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 83,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 83.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 84,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 84.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 85,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 85.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 86,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 86.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 87,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 87.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 88,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 88.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 89,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 89.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 90,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 90.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 91,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 91.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 92,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 92.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 93,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 93.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 94,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 94.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 95,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 95.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 96,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 96.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 97,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 97.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 98,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 98.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 99,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 99.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 100,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 100.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 101,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 101.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 102,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 102.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 103,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 103.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 104,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 104.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 105,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 105.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 106,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 106.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 107,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 107.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 108,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 108.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 109,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 109.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 110,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 110.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 111,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 111.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 112,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 112.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 113,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 113.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 114,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 114.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 115,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 115.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 116,
+    "situation": "Entering someone's home",
+    "do": "Say \"ojama shimasu\" before entering.",
+    "dont": "Do not walk in with shoes on.",
+    "note": "Shows respect for the host. Entry 116.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 117,
+    "situation": "On trains",
+    "do": "Keep phone calls minimal and speak quietly.",
+    "dont": "Do not talk loudly or block doors.",
+    "note": "Public quiet is expected. Entry 117.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 118,
+    "situation": "Gift giving",
+    "do": "Offer gifts with both hands.",
+    "dont": "Do not open a gift immediately unless invited.",
+    "note": "Politeness conventions vary by context. Entry 118.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 119,
+    "situation": "Business cards",
+    "do": "Receive cards with both hands and read them.",
+    "dont": "Do not put cards in your pocket immediately.",
+    "note": "Treat cards as extensions of identity. Entry 119.",
+    "issued": false,
+    "completed": true
+  },
+  {
+    "id": 120,
+    "situation": "Temple visits",
+    "do": "Purify hands at the chozuya when available.",
+    "dont": "Do not be disruptive during prayer.",
+    "note": "Follow posted rules and flow. Entry 120.",
+    "issued": false,
+    "completed": true
+  }
+]

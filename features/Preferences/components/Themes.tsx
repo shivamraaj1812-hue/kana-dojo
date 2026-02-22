@@ -106,6 +106,12 @@ const Themes = () => {
     );
   }, []);
 
+  const visibleThemeSets = themeSets.filter(
+    // Temporarily hide seasonal groups in preferences.
+    // themeSet => themeSet.name !== 'Halloween' && themeSet.name !== 'Christmas',
+    themeSet => themeSet.name !== 'Halloween' && themeSet.name !== 'Christmas',
+  );
+
   return (
     <div className='flex flex-col gap-6'>
       {/* <div className='flex gap-2'>
@@ -147,7 +153,7 @@ const Themes = () => {
           Random Theme
         </button>
       </div> */}
-      {themeSets.map((themeSet, i) => (
+      {visibleThemeSets.map((themeSet, i) => (
         <CollapsibleSection
           key={i}
           title={

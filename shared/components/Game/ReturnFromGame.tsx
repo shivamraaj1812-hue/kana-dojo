@@ -37,8 +37,8 @@ interface StatItemProps {
 
 const StatItem = ({ icon: Icon, value }: StatItemProps) => (
   <p className='flex flex-row items-center gap-0.75 text-xl sm:gap-1'>
-    <Icon />
-    <span>{value}</span>
+    <Icon className='text-(--secondary-color)' />
+    <span className='text-(--main-color)'>{value}</span>
   </p>
 );
 
@@ -136,7 +136,7 @@ const Return = ({ isHidden, href, gameMode }: ReturnProps) => {
         </p>
 
         {/* Stats display */}
-        <div className='flex w-1/2 flex-row items-center justify-end gap-2.5 py-2 text-(--secondary-color) sm:gap-3'>
+        <div className='flex w-1/2 flex-row items-center justify-end gap-2.5 py-2 sm:gap-3'>
           <StatItem icon={SquareCheck} value={numCorrectAnswers} />
           <StatItem icon={SquareX} value={numWrongAnswers} />
           <StatItem icon={Flame} value={currentStreak} />

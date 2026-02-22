@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 31,
+    "japanese": "??????????",
+    "romaji": "Michi wa jibun de kirihiraku.",
+    "english": "I make my own path.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 32,
+    "japanese": "???????????",
+    "romaji": "Hikari wa mada kiete inai.",
+    "english": "The light has not gone out.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 33,
+    "japanese": "????????",
+    "romaji": "Yami o koete iku.",
+    "english": "We go beyond the darkness.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 34,
+    "japanese": "??????",
+    "romaji": "Nakama o mamoru.",
+    "english": "I protect my friends.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 35,
+    "japanese": "??????",
+    "romaji": "Honki de koi.",
+    "english": "Come at me for real.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 36,
+    "japanese": "???????",
+    "romaji": "Mou mayowanai.",
+    "english": "I won't hesitate anymore.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 37,
+    "japanese": "?????????",
+    "romaji": "Koko kara ga honban da.",
+    "english": "The real battle starts now.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 38,
+    "japanese": "???????",
+    "romaji": "Saigo made tatakau.",
+    "english": "I'll fight to the very end.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 39,
+    "japanese": "??????????",
+    "romaji": "Mirai wa kono te de tsukamu.",
+    "english": "I will seize the future with my own hands.",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 40,
+    "japanese": "????",
+    "romaji": "Ikuzo!",
+    "english": "Let's go!",
+    "game": "Final Fantasy VII",
+    "character": "Sephiroth",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 41,
+    "japanese": "????????",
+    "romaji": "Mada owaranai.",
+    "english": "It's not over yet.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 42,
+    "japanese": "????????????",
+    "romaji": "Makeru wake ni wa ikanai.",
+    "english": "I can't afford to lose.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 43,
+    "japanese": "????",
+    "romaji": "Shoubu da!",
+    "english": "Let's settle this!",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 44,
+    "japanese": "??????????",
+    "romaji": "Unmei o kaete miseru.",
+    "english": "I'll change fate.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 45,
+    "japanese": "?????????",
+    "romaji": "Kore ga ore no kotae da.",
+    "english": "This is my answer.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 46,
+    "japanese": "????????",
+    "romaji": "Shinjiru shika nai.",
+    "english": "All we can do is believe.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 47,
+    "japanese": "???????",
+    "romaji": "Kakugo wa ii ka?",
+    "english": "Are you ready?",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 48,
+    "japanese": "????????",
+    "romaji": "Zettai ni akiramenai.",
+    "english": "I will never give up.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 49,
+    "japanese": "????????",
+    "romaji": "Saa, hajimeyou.",
+    "english": "Now, let's begin.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 50,
+    "japanese": "??????????",
+    "romaji": "Michi wa jibun de kirihiraku.",
+    "english": "I make my own path.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 51,
+    "japanese": "???????????",
+    "romaji": "Hikari wa mada kiete inai.",
+    "english": "The light has not gone out.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 52,
+    "japanese": "????????",
+    "romaji": "Yami o koete iku.",
+    "english": "We go beyond the darkness.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 53,
+    "japanese": "??????",
+    "romaji": "Nakama o mamoru.",
+    "english": "I protect my friends.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 54,
+    "japanese": "??????",
+    "romaji": "Honki de koi.",
+    "english": "Come at me for real.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 55,
+    "japanese": "???????",
+    "romaji": "Mou mayowanai.",
+    "english": "I won't hesitate anymore.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 56,
+    "japanese": "?????????",
+    "romaji": "Koko kara ga honban da.",
+    "english": "The real battle starts now.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 57,
+    "japanese": "???????",
+    "romaji": "Saigo made tatakau.",
+    "english": "I'll fight to the very end.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 58,
+    "japanese": "??????????",
+    "romaji": "Mirai wa kono te de tsukamu.",
+    "english": "I will seize the future with my own hands.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 59,
+    "japanese": "????",
+    "romaji": "Ikuzo!",
+    "english": "Let's go!",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 60,
+    "japanese": "??????",
+    "romaji": "Koko made da.",
+    "english": "This ends here.",
+    "game": "Final Fantasy X",
+    "character": "Tidus",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 61,
+    "japanese": "????????????",
+    "romaji": "Makeru wake ni wa ikanai.",
+    "english": "I can't afford to lose.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 62,
+    "japanese": "????",
+    "romaji": "Shoubu da!",
+    "english": "Let's settle this!",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 63,
+    "japanese": "??????????",
+    "romaji": "Unmei o kaete miseru.",
+    "english": "I'll change fate.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 64,
+    "japanese": "?????????",
+    "romaji": "Kore ga ore no kotae da.",
+    "english": "This is my answer.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 65,
+    "japanese": "????????",
+    "romaji": "Shinjiru shika nai.",
+    "english": "All we can do is believe.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 66,
+    "japanese": "???????",
+    "romaji": "Kakugo wa ii ka?",
+    "english": "Are you ready?",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 67,
+    "japanese": "????????",
+    "romaji": "Zettai ni akiramenai.",
+    "english": "I will never give up.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 68,
+    "japanese": "????????",
+    "romaji": "Saa, hajimeyou.",
+    "english": "Now, let's begin.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 69,
+    "japanese": "??????????",
+    "romaji": "Michi wa jibun de kirihiraku.",
+    "english": "I make my own path.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 70,
+    "japanese": "???????????",
+    "romaji": "Hikari wa mada kiete inai.",
+    "english": "The light has not gone out.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 71,
+    "japanese": "????????",
+    "romaji": "Yami o koete iku.",
+    "english": "We go beyond the darkness.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 72,
+    "japanese": "??????",
+    "romaji": "Nakama o mamoru.",
+    "english": "I protect my friends.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 73,
+    "japanese": "??????",
+    "romaji": "Honki de koi.",
+    "english": "Come at me for real.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 74,
+    "japanese": "???????",
+    "romaji": "Mou mayowanai.",
+    "english": "I won't hesitate anymore.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 75,
+    "japanese": "?????????",
+    "romaji": "Koko kara ga honban da.",
+    "english": "The real battle starts now.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 76,
+    "japanese": "???????",
+    "romaji": "Saigo made tatakau.",
+    "english": "I'll fight to the very end.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 77,
+    "japanese": "??????????",
+    "romaji": "Mirai wa kono te de tsukamu.",
+    "english": "I will seize the future with my own hands.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 78,
+    "japanese": "????",
+    "romaji": "Ikuzo!",
+    "english": "Let's go!",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 79,
+    "japanese": "??????",
+    "romaji": "Koko made da.",
+    "english": "This ends here.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 80,
+    "japanese": "????????",
+    "romaji": "Mada owaranai.",
+    "english": "It's not over yet.",
+    "game": "Final Fantasy X",
+    "character": "Auron",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 81,
+    "japanese": "????",
+    "romaji": "Shoubu da!",
+    "english": "Let's settle this!",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 82,
+    "japanese": "??????????",
+    "romaji": "Unmei o kaete miseru.",
+    "english": "I'll change fate.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 83,
+    "japanese": "?????????",
+    "romaji": "Kore ga ore no kotae da.",
+    "english": "This is my answer.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 84,
+    "japanese": "????????",
+    "romaji": "Shinjiru shika nai.",
+    "english": "All we can do is believe.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 85,
+    "japanese": "???????",
+    "romaji": "Kakugo wa ii ka?",
+    "english": "Are you ready?",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 86,
+    "japanese": "????????",
+    "romaji": "Zettai ni akiramenai.",
+    "english": "I will never give up.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 87,
+    "japanese": "????????",
+    "romaji": "Saa, hajimeyou.",
+    "english": "Now, let's begin.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 88,
+    "japanese": "??????????",
+    "romaji": "Michi wa jibun de kirihiraku.",
+    "english": "I make my own path.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 89,
+    "japanese": "???????????",
+    "romaji": "Hikari wa mada kiete inai.",
+    "english": "The light has not gone out.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 90,
+    "japanese": "????????",
+    "romaji": "Yami o koete iku.",
+    "english": "We go beyond the darkness.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 91,
+    "japanese": "??????",
+    "romaji": "Nakama o mamoru.",
+    "english": "I protect my friends.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 92,
+    "japanese": "??????",
+    "romaji": "Honki de koi.",
+    "english": "Come at me for real.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 93,
+    "japanese": "???????",
+    "romaji": "Mou mayowanai.",
+    "english": "I won't hesitate anymore.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 94,
+    "japanese": "?????????",
+    "romaji": "Koko kara ga honban da.",
+    "english": "The real battle starts now.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 95,
+    "japanese": "???????",
+    "romaji": "Saigo made tatakau.",
+    "english": "I'll fight to the very end.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 96,
+    "japanese": "??????????",
+    "romaji": "Mirai wa kono te de tsukamu.",
+    "english": "I will seize the future with my own hands.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 97,
+    "japanese": "????",
+    "romaji": "Ikuzo!",
+    "english": "Let's go!",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 98,
+    "japanese": "??????",
+    "romaji": "Koko made da.",
+    "english": "This ends here.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 99,
+    "japanese": "????????",
+    "romaji": "Mada owaranai.",
+    "english": "It's not over yet.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 100,
+    "japanese": "????????????",
+    "romaji": "Makeru wake ni wa ikanai.",
+    "english": "I can't afford to lose.",
+    "game": "Kingdom Hearts",
+    "character": "Sora",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 101,
+    "japanese": "??????????",
+    "romaji": "Unmei o kaete miseru.",
+    "english": "I'll change fate.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 102,
+    "japanese": "?????????",
+    "romaji": "Kore ga ore no kotae da.",
+    "english": "This is my answer.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 103,
+    "japanese": "????????",
+    "romaji": "Shinjiru shika nai.",
+    "english": "All we can do is believe.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 104,
+    "japanese": "???????",
+    "romaji": "Kakugo wa ii ka?",
+    "english": "Are you ready?",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 105,
+    "japanese": "????????",
+    "romaji": "Zettai ni akiramenai.",
+    "english": "I will never give up.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 106,
+    "japanese": "????????",
+    "romaji": "Saa, hajimeyou.",
+    "english": "Now, let's begin.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 107,
+    "japanese": "??????????",
+    "romaji": "Michi wa jibun de kirihiraku.",
+    "english": "I make my own path.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 108,
+    "japanese": "???????????",
+    "romaji": "Hikari wa mada kiete inai.",
+    "english": "The light has not gone out.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 109,
+    "japanese": "????????",
+    "romaji": "Yami o koete iku.",
+    "english": "We go beyond the darkness.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 110,
+    "japanese": "??????",
+    "romaji": "Nakama o mamoru.",
+    "english": "I protect my friends.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 111,
+    "japanese": "??????",
+    "romaji": "Honki de koi.",
+    "english": "Come at me for real.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 112,
+    "japanese": "???????",
+    "romaji": "Mou mayowanai.",
+    "english": "I won't hesitate anymore.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 113,
+    "japanese": "?????????",
+    "romaji": "Koko kara ga honban da.",
+    "english": "The real battle starts now.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 114,
+    "japanese": "???????",
+    "romaji": "Saigo made tatakau.",
+    "english": "I'll fight to the very end.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 115,
+    "japanese": "??????????",
+    "romaji": "Mirai wa kono te de tsukamu.",
+    "english": "I will seize the future with my own hands.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 116,
+    "japanese": "????",
+    "romaji": "Ikuzo!",
+    "english": "Let's go!",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 117,
+    "japanese": "??????",
+    "romaji": "Koko made da.",
+    "english": "This ends here.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 118,
+    "japanese": "????????",
+    "romaji": "Mada owaranai.",
+    "english": "It's not over yet.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 119,
+    "japanese": "????????????",
+    "romaji": "Makeru wake ni wa ikanai.",
+    "english": "I can't afford to lose.",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 120,
+    "japanese": "????",
+    "romaji": "Shoubu da!",
+    "english": "Let's settle this!",
+    "game": "Kingdom Hearts",
+    "character": "Riku",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 121,
+    "japanese": "?????????",
+    "romaji": "Kore ga ore no kotae da.",
+    "english": "This is my answer.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 122,
+    "japanese": "????????",
+    "romaji": "Shinjiru shika nai.",
+    "english": "All we can do is believe.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 123,
+    "japanese": "???????",
+    "romaji": "Kakugo wa ii ka?",
+    "english": "Are you ready?",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 124,
+    "japanese": "????????",
+    "romaji": "Zettai ni akiramenai.",
+    "english": "I will never give up.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 125,
+    "japanese": "????????",
+    "romaji": "Saa, hajimeyou.",
+    "english": "Now, let's begin.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 126,
+    "japanese": "??????????",
+    "romaji": "Michi wa jibun de kirihiraku.",
+    "english": "I make my own path.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 127,
+    "japanese": "???????????",
+    "romaji": "Hikari wa mada kiete inai.",
+    "english": "The light has not gone out.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 128,
+    "japanese": "????????",
+    "romaji": "Yami o koete iku.",
+    "english": "We go beyond the darkness.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 129,
+    "japanese": "??????",
+    "romaji": "Nakama o mamoru.",
+    "english": "I protect my friends.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 130,
+    "japanese": "??????",
+    "romaji": "Honki de koi.",
+    "english": "Come at me for real.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 131,
+    "japanese": "???????",
+    "romaji": "Mou mayowanai.",
+    "english": "I won't hesitate anymore.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 132,
+    "japanese": "?????????",
+    "romaji": "Koko kara ga honban da.",
+    "english": "The real battle starts now.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 133,
+    "japanese": "???????",
+    "romaji": "Saigo made tatakau.",
+    "english": "I'll fight to the very end.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 134,
+    "japanese": "??????????",
+    "romaji": "Mirai wa kono te de tsukamu.",
+    "english": "I will seize the future with my own hands.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 135,
+    "japanese": "????",
+    "romaji": "Ikuzo!",
+    "english": "Let's go!",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 136,
+    "japanese": "??????",
+    "romaji": "Koko made da.",
+    "english": "This ends here.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 137,
+    "japanese": "????????",
+    "romaji": "Mada owaranai.",
+    "english": "It's not over yet.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 138,
+    "japanese": "????????????",
+    "romaji": "Makeru wake ni wa ikanai.",
+    "english": "I can't afford to lose.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 139,
+    "japanese": "????",
+    "romaji": "Shoubu da!",
+    "english": "Let's settle this!",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 140,
+    "japanese": "??????????",
+    "romaji": "Unmei o kaete miseru.",
+    "english": "I'll change fate.",
+    "game": "Metal Gear Solid",
+    "character": "Solid Snake",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 141,
+    "japanese": "????????",
+    "romaji": "Shinjiru shika nai.",
+    "english": "All we can do is believe.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": true,
+    "completed": false
+  },
+  {
+    "id": 142,
+    "japanese": "???????",
+    "romaji": "Kakugo wa ii ka?",
+    "english": "Are you ready?",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 143,
+    "japanese": "????????",
+    "romaji": "Zettai ni akiramenai.",
+    "english": "I will never give up.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 144,
+    "japanese": "????????",
+    "romaji": "Saa, hajimeyou.",
+    "english": "Now, let's begin.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 145,
+    "japanese": "??????????",
+    "romaji": "Michi wa jibun de kirihiraku.",
+    "english": "I make my own path.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 146,
+    "japanese": "???????????",
+    "romaji": "Hikari wa mada kiete inai.",
+    "english": "The light has not gone out.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 147,
+    "japanese": "????????",
+    "romaji": "Yami o koete iku.",
+    "english": "We go beyond the darkness.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 148,
+    "japanese": "??????",
+    "romaji": "Nakama o mamoru.",
+    "english": "I protect my friends.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 149,
+    "japanese": "??????",
+    "romaji": "Honki de koi.",
+    "english": "Come at me for real.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": false,
+    "completed": false
+  },
+  {
+    "id": 150,
+    "japanese": "???????",
+    "romaji": "Mou mayowanai.",
+    "english": "I won't hesitate anymore.",
+    "game": "Metal Gear Solid",
+    "character": "Otacon",
+    "issued": true,
+    "completed": false
+  }
+]

@@ -35,19 +35,31 @@ const FontCard = memo(function FontCard({
         'flex cursor-pointer items-center justify-center rounded-xl border-0 bg-(--card-color) px-4 py-4',
       )}
       style={{
-        outline: isSelected ? '3px solid var(--secondary-color)' : 'none',
+        outline: 'none',
+        backgroundColor: isSelected
+          ? 'var(--secondary-color)'
+          : 'var(--card-color)',
+        transition: 'background-color 275ms, color 275ms',
       }}
       onClick={() => onClick(fontName)}
     >
       <p className={clsx('text-center text-xl', fontClassName)}>
-        {/* <span className='text-(--secondary-color)'>
-          {isSelected ? '\u2B24 ' : ''}
-        </span> */}
-        <span className='text-(--main-color)'>
+        <span
+          style={{
+            color: isSelected ? 'var(--main-color)' : 'var(--secondary-color)',
+          }}
+        >
           {fontName}
           {isDefault && ' (default)'}
         </span>
-        <span className='ml-2 text-(--secondary-color)'>かな道場</span>
+        <span
+          className='ml-2'
+          style={{
+            color: isSelected ? 'var(--card-color)' : 'var(--secondary-color)',
+          }}
+        >
+          かな道場
+        </span>
       </p>
     </label>
   );

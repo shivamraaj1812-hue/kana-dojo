@@ -1,5 +1,13 @@
 [
   {
+    "version": "0.1.15",
+    "date": "February 21, 2026",
+    "changes": [
+      "Added interactive cursor trail effect for a more dynamic browsing experience (off by default, enable in Preferences)",
+      "Introduced satisfying click effects across the application (off by default, enable in Preferences)"
+    ]
+  },
+  {
     "version": "0.1.14",
     "date": "February 5, 2026",
     "changes": [

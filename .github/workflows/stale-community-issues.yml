@@ -34,12 +34,20 @@ jobs:
             const templates = require('./.github/templates/messages.cjs');
             const t = templates.staleIssues;
 
-            const themeBacklogPath = 'data/community-backlog/theme-backlog.json';
-            const factsBacklogPath = 'data/community-backlog/facts-backlog.json';
-            const proverbsBacklogPath = 'data/community-backlog/proverbs-backlog.json';
-            const triviaBacklogPath = 'data/community-backlog/trivia-backlog.json';
-            const grammarBacklogPath = 'data/community-backlog/grammar-backlog.json';
-            const animeQuotesBacklogPath = 'data/community-backlog/anime-quotes-backlog.json';
+            const themeBacklogPath = 'community/backlog/theme-backlog.json';
+            const factsBacklogPath = 'community/backlog/facts-backlog.json';
+            const proverbsBacklogPath = 'community/backlog/proverbs-backlog.json';
+            const haikuBacklogPath = 'community/backlog/haiku-backlog.json';
+            const triviaBacklogPath = 'community/backlog/trivia-backlog.json';
+            const grammarBacklogPath = 'community/backlog/grammar-backlog.json';
+            const animeQuotesBacklogPath = 'community/backlog/anime-quotes-backlog.json';
+            const idiomsBacklogPath = 'community/backlog/idioms-backlog.json';
+            const regionalDialectsBacklogPath = 'community/backlog/regional-dialects-backlog.json';
+            const falseFriendsBacklogPath = 'community/backlog/false-friends-backlog.json';
+            const culturalEtiquetteBacklogPath = 'community/backlog/cultural-etiquette-backlog.json';
+            const exampleSentencesBacklogPath = 'community/backlog/example-sentences-backlog.json';
+            const commonMistakesBacklogPath = 'community/backlog/common-mistakes-backlog.json';
+            const videoGameQuotesBacklogPath = 'community/backlog/video-game-quotes-backlog.json';
 
             let issues = [];
             let page = 1;
@@ -62,15 +70,23 @@ jobs:
             const now = new Date();
             const WARNING_THRESHOLD_MS = templates.config.staleWarningAfterMs;   // 12 hours
             const CLOSE_THRESHOLD_MS = templates.config.staleCloseAfterMs;       // 18 hours
-            const UNASSIGNED_CLOSE_THRESHOLD_MS = 8 * 60 * 60 * 1000; // 8 hours
+            const UNASSIGNED_CLOSE_THRESHOLD_MS = 6 * 60 * 60 * 1000; // 6 hours
 
             let needsCommit = false;
             let themes = JSON.parse(fs.readFileSync(themeBacklogPath, 'utf8'));
             let facts = JSON.parse(fs.readFileSync(factsBacklogPath, 'utf8'));
             let proverbs = JSON.parse(fs.readFileSync(proverbsBacklogPath, 'utf8'));
+            let haiku = JSON.parse(fs.readFileSync(haikuBacklogPath, 'utf8'));
             let trivia = JSON.parse(fs.readFileSync(triviaBacklogPath, 'utf8'));
             let grammar = JSON.parse(fs.readFileSync(grammarBacklogPath, 'utf8'));
             let animeQuotes = JSON.parse(fs.readFileSync(animeQuotesBacklogPath, 'utf8'));
+            let idioms = JSON.parse(fs.readFileSync(idiomsBacklogPath, 'utf8'));
+            let regionalDialects = JSON.parse(fs.readFileSync(regionalDialectsBacklogPath, 'utf8'));
+            let falseFriends = JSON.parse(fs.readFileSync(falseFriendsBacklogPath, 'utf8'));
+            let culturalEtiquette = JSON.parse(fs.readFileSync(culturalEtiquetteBacklogPath, 'utf8'));
+            let exampleSentences = JSON.parse(fs.readFileSync(exampleSentencesBacklogPath, 'utf8'));
+            let commonMistakes = JSON.parse(fs.readFileSync(commonMistakesBacklogPath, 'utf8'));
+            let videoGameQuotes = JSON.parse(fs.readFileSync(videoGameQuotesBacklogPath, 'utf8'));
 
             let skippedUnassigned = 0;
             let warnedAssigned = 0;
@@ -120,6 +136,19 @@ jobs:
                     console.log(`Proverb #${proverbId} is already completed, not re-enabling`);
                   }
                 }
+              } else if (title.includes('Add Classic Japanese Haiku #')) {
+                const haikuIdMatch = title.match(/#(\d+)/);
+                if (haikuIdMatch) {
+                  const haikuId = parseInt(haikuIdMatch[1]);
+                  const haikuIndex = haiku.findIndex(function(h) { return h.id === haikuId; });
+                  if (haikuIndex !== -1 && !haiku[haikuIndex].completed) {
+                    haiku[haikuIndex].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled haiku #${haikuId}${sourceTag}`);
+                  } else if (haikuIndex !== -1 && haiku[haikuIndex].completed) {
+                    console.log(`Haiku #${haikuId} is already completed, not re-enabling`);
+                  }
+                }
               } else if (title.includes('Add New Trivia Question #')) {
                 const triviaIdMatch = title.match(/#(\d+)/);
                 if (triviaIdMatch) {
@@ -159,6 +188,97 @@ jobs:
                     console.log(`Anime quote #${quoteId} is already completed, not re-enabling`);
                   }
                 }
+              } else if (title.includes('Add New Japanese Idiom #')) {
+                const idiomIdMatch = title.match(/#(\d+)/);
+                if (idiomIdMatch) {
+                  const idiomId = parseInt(idiomIdMatch[1]);
+                  const idiomIndex = idioms.findIndex(function(i) { return i.id === idiomId; });
+                  if (idiomIndex !== -1 && !idioms[idiomIndex].completed) {
+                    idioms[idiomIndex].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled idiom #${idiomId}${sourceTag}`);
+                  } else if (idiomIndex !== -1 && idioms[idiomIndex].completed) {
+                    console.log(`Idiom #${idiomId} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Regional Dialect Entry #')) {
+                const dialectIdMatch = title.match(/#(\d+)/);
+                if (dialectIdMatch) {
+                  const dialectId = parseInt(dialectIdMatch[1]);
+                  const dialectIndex = regionalDialects.findIndex(function(d) { return d.id === dialectId; });
+                  if (dialectIndex !== -1 && !regionalDialects[dialectIndex].completed) {
+                    regionalDialects[dialectIndex].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled regional dialect #${dialectId}${sourceTag}`);
+                  } else if (dialectIndex !== -1 && regionalDialects[dialectIndex].completed) {
+                    console.log(`Regional dialect #${dialectId} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Japanese False Friend #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = falseFriends.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !falseFriends[idx].completed) {
+                    falseFriends[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled false friend #${id}${sourceTag}`);
+                  } else if (idx !== -1 && falseFriends[idx].completed) {
+                    console.log(`False friend #${id} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Japanese Cultural Etiquette Tip #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = culturalEtiquette.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !culturalEtiquette[idx].completed) {
+                    culturalEtiquette[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled cultural etiquette #${id}${sourceTag}`);
+                  } else if (idx !== -1 && culturalEtiquette[idx].completed) {
+                    console.log(`Cultural etiquette #${id} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Japanese Example Sentence #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = exampleSentences.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !exampleSentences[idx].completed) {
+                    exampleSentences[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled example sentence #${id}${sourceTag}`);
+                  } else if (idx !== -1 && exampleSentences[idx].completed) {
+                    console.log(`Example sentence #${id} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Common Japanese Learner Mistake #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = commonMistakes.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !commonMistakes[idx].completed) {
+                    commonMistakes[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled common mistake #${id}${sourceTag}`);
+                  } else if (idx !== -1 && commonMistakes[idx].completed) {
+                    console.log(`Common mistake #${id} is already completed, not re-enabling`);
+                  }
+                }
+              } else if (title.includes('Add Famous Japanese Video Game Quote #')) {
+                const idMatch = title.match(/#(\d+)/);
+                if (idMatch) {
+                  const id = parseInt(idMatch[1]);
+                  const idx = videoGameQuotes.findIndex(function(i) { return i.id === id; });
+                  if (idx !== -1 && !videoGameQuotes[idx].completed) {
+                    videoGameQuotes[idx].issued = false;
+                    needsCommit = true;
+                    console.log(`Re-enabled video game quote #${id}${sourceTag}`);
+                  } else if (idx !== -1 && videoGameQuotes[idx].completed) {
+                    console.log(`Video game quote #${id} is already completed, not re-enabling`);
+                  }
+                }
               }
             }
 
@@ -177,7 +297,7 @@ jobs:
                     repo: context.repo.repo,
                     issue_number: issue.number,
                     state: 'closed',
-                    state_reason: 'not_planned'
+                    state_reason: 'completed'
                   });
                 } else {
                   // Leave unassigned issues quiet until auto-close to avoid noisy bot comments
@@ -193,13 +313,18 @@ jobs:
                 // Unassign the user before closing
                 const assignees = issue.assignees.map(function(a) { return a.login; });
                 if (assignees.length > 0) {
-                  await github.rest.issues.removeAssignees({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    issue_number: issue.number,
-                    assignees: assignees
-                  });
-                  console.log(`Unassigned ${assignees.join(', ')} from issue #${issue.number}`);
+                  try {
+                    await github.rest.issues.removeAssignees({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      assignees: assignees
+                    });
+                    console.log(`Unassigned ${assignees.join(', ')} from issue #${issue.number}`);
+                  } catch (error) {
+                    // Continue stale cleanup even if assignee removal races or fails for one issue
+                    console.log(`Could not unassign issue #${issue.number}: ${error.message}`);
+                  }
                 }
                 
                 await github.rest.issues.update({
@@ -207,7 +332,7 @@ jobs:
                   repo: context.repo.repo,
                   issue_number: issue.number,
                   state: 'closed',
-                  state_reason: 'not_planned'
+                  state_reason: 'completed'
                 });
 
                 reenableBacklogItem(issue.title, 'assigned-stale-close');
@@ -239,9 +364,17 @@ jobs:
               fs.writeFileSync(themeBacklogPath, JSON.stringify(themes, null, 2));
               fs.writeFileSync(factsBacklogPath, JSON.stringify(facts, null, 2));
               fs.writeFileSync(proverbsBacklogPath, JSON.stringify(proverbs, null, 2));
+              fs.writeFileSync(haikuBacklogPath, JSON.stringify(haiku, null, 2));
               fs.writeFileSync(triviaBacklogPath, JSON.stringify(trivia, null, 2));
               fs.writeFileSync(grammarBacklogPath, JSON.stringify(grammar, null, 2));
               fs.writeFileSync(animeQuotesBacklogPath, JSON.stringify(animeQuotes, null, 2));
+              fs.writeFileSync(idiomsBacklogPath, JSON.stringify(idioms, null, 2));
+              fs.writeFileSync(regionalDialectsBacklogPath, JSON.stringify(regionalDialects, null, 2));
+              fs.writeFileSync(falseFriendsBacklogPath, JSON.stringify(falseFriends, null, 2));
+              fs.writeFileSync(culturalEtiquetteBacklogPath, JSON.stringify(culturalEtiquette, null, 2));
+              fs.writeFileSync(exampleSentencesBacklogPath, JSON.stringify(exampleSentences, null, 2));
+              fs.writeFileSync(commonMistakesBacklogPath, JSON.stringify(commonMistakes, null, 2));
+              fs.writeFileSync(videoGameQuotesBacklogPath, JSON.stringify(videoGameQuotes, null, 2));
               core.setOutput('needs_commit', 'true');
             } else {
               core.setOutput('needs_commit', 'false');
@@ -250,7 +383,7 @@ jobs:
       - name: Commit backlog updates
         if: steps.stale-check.outputs.needs_commit == 'true'
         run: |
-          git add data/community-backlog/
+          git add community/backlog/
           if git diff --cached --quiet; then
             echo "No backlog changes to commit."
             exit 0

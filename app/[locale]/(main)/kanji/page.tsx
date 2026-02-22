@@ -40,21 +40,21 @@ export default async function KanjiPage({
         ]}
       />
       <CourseSchema
-        name='Japanese Kanji Learning Course (JLPT N5-N1)'
-        description='Learn Japanese Kanji characters organized by JLPT levels from N5 to N1. Master over 2,000 essential kanji with readings, meanings, and example words through interactive training modes and spaced repetition.'
+        name='Japanese Kanji Learning Course by JLPT Level (N5-N1)'
+        description='Learn Japanese Kanji characters organized by JLPT levels from N5 to N1. Master over 2,000 essential kanji with readings, meanings, and context through interactive training and spaced repetition.'
         url={`https://kanadojo.com/${locale}/kanji`}
         educationalLevel='Beginner to Advanced'
         skillLevel='All Levels'
-        learningResourceType='Interactive Exercise and Games'
+        learningResourceType='Interactive Course, Exercise and Games'
       />
       <LearningResourceSchema
-        name='Interactive Kanji Practice and Quiz'
-        description='Master over 2,000 Japanese Kanji characters organized by JLPT levels N5 through N1. Practice readings, meanings, and stroke order with interactive quizzes and spaced repetition.'
+        name='Interactive Kanji Practice and JLPT Quiz'
+        description='Master over 2,000 Japanese Kanji characters by JLPT levels N5 through N1. Practice readings, meanings, and recognition with interactive quizzes and adaptive repetition.'
         url={`https://kanadojo.com/${locale}/kanji`}
-        learningResourceType='Quiz'
+        learningResourceType={['Quiz', 'Interactive', 'Game']}
         educationalLevel={['Beginner', 'Intermediate', 'Advanced']}
         teaches='Japanese Kanji Characters, Readings, and Meanings'
-        assesses='Kanji Recognition, Onyomi and Kunyomi Readings'
+        assesses='Kanji recognition, onyomi and kunyomi recall, and meaning comprehension'
         timeRequired='PT1H'
         isAccessibleForFree={true}
         provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}

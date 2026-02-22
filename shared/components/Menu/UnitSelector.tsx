@@ -48,7 +48,7 @@ const UnitSelector = () => {
   const { playClick } = useClick();
   const pathname = usePathname();
   const pathWithoutLocale = removeLocaleFromPath(pathname);
-  const contentType = pathWithoutLocale.slice(1) as ContentType;
+  const contentType = pathWithoutLocale.split('/')[1] as ContentType;
 
   const isKanji = contentType === 'kanji';
 

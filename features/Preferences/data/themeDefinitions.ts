@@ -80,6 +80,7 @@ const baseThemeSets: BaseThemeGroup[] = [
     ],
   },
 
+  /*
   {
     name: 'Light',
     icon: Sun,
@@ -130,16 +131,23 @@ const baseThemeSets: BaseThemeGroup[] = [
       },
     ],
   },
+  */
   {
     name: 'Dark',
     icon: Moon,
     isLight: false,
     themes: [
       {
-        id: 'soba-slate',
-        backgroundColor: 'oklch(18.0% 0.015 250.0 / 1)',
-        mainColor: 'oklch(68.0% 0.085 60.0 / 1)',
-        secondaryColor: 'oklch(58.0% 0.045 70.0 / 1)',
+        id: 'sapphire-bloom',
+        backgroundColor: 'oklch(23.44% 0.0432 267.85 / 1)',
+        mainColor: 'oklch(79.09% 0.1242 299.66 / 1)',
+        secondaryColor: 'oklch(89.39% 0.1672 171.49 / 1)',
+      },
+      {
+        id: 'monkeytype',
+        backgroundColor: 'oklch(33.94% 0.0062 248.01 / 1)',
+        mainColor: 'oklch(81.03% 0.1625 94.11 / 1)',
+        secondaryColor: 'oklch(86.53% 0.0153 96.38 / 1)',
       },
       {
         id: 'moonlit-bay',
@@ -381,12 +389,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(82.5% 0.132 187.0 / 1)',
       },
       {
-        id: 'monkeytype',
-        backgroundColor: 'oklch(33.94% 0.0062 248.01 / 1)',
-        mainColor: 'oklch(81.03% 0.1625 94.11 / 1)',
-        secondaryColor: 'oklch(86.53% 0.0153 96.38 / 1)',
-      },
-      {
         id: 'nord',
         backgroundColor: 'oklch(30.81% 0.0237 264.19 / 1)',
         mainColor: 'oklch(77.09% 0.0747 130.82 / 1)',
@@ -433,12 +435,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(23.46% 0.0439 256.98 / 1)',
         mainColor: 'oklch(77.77% 0.1371 304.09 / 1)',
         secondaryColor: 'oklch(96.20% 0.0564 196.25 / 1)',
-      },
-      {
-        id: 'wasabi-garden',
-        backgroundColor: 'oklch(26.82% 0.0502 136.06 / 1)',
-        mainColor: 'oklch(83.94% 0.2480 141.92 / 1)',
-        secondaryColor: 'oklch(76.54% 0.1356 68.47 / 1)',
       },
       {
         id: 'matrix',
@@ -597,12 +593,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(88.72% 0.1622 92.81 / 1)',
       },
       {
-        id: 'astral-mirage',
-        backgroundColor: 'oklch(23.36% 0.0353 215.33 / 1)',
-        mainColor: 'oklch(69.91% 0.1962 305.80 / 1)',
-        secondaryColor: 'oklch(88.16% 0.1511 93.44 / 1)',
-      },
-      {
         id: 'oceanic-aurora',
         backgroundColor: 'oklch(24.46% 0.0436 241.01 / 1)',
         mainColor: 'oklch(87.55% 0.1607 168.05 / 1)',
@@ -625,12 +615,6 @@ const baseThemeSets: BaseThemeGroup[] = [
         backgroundColor: 'oklch(20.83% 0.0537 285.29 / 1)',
         mainColor: 'oklch(70.85% 0.1490 27.94 / 1)',
         secondaryColor: 'oklch(90.41% 0.1302 198.38 / 1)',
-      },
-      {
-        id: 'sapphire-bloom',
-        backgroundColor: 'oklch(23.44% 0.0432 267.85 / 1)',
-        mainColor: 'oklch(79.09% 0.1242 299.66 / 1)',
-        secondaryColor: 'oklch(89.39% 0.1672 171.49 / 1)',
       },
       {
         id: 'celestite-frost',
@@ -1036,12 +1020,6 @@ const baseThemeSets: BaseThemeGroup[] = [
       },
 
       {
-        id: 'bento-box',
-        backgroundColor: 'oklch(22.0% 0.025 45.0 / 1)',
-        mainColor: 'oklch(70.0% 0.175 20.0 / 1)',
-        secondaryColor: 'oklch(75.0% 0.165 145.0 / 1)',
-      },
-      {
         id: 'hanabi-festival',
         backgroundColor: 'oklch(14.0% 0.055 275.0 / 1)',
         mainColor: 'oklch(85.0% 0.200 35.0 / 1)',
@@ -1182,6 +1160,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         // Selecting this theme enables random theme cycling on each question
         // Display name is "?" to signify mystery/chaos
         // NOTE: The theme button has a crazy gradient background applied in Themes.tsx
+        id: 'long',
+        backgroundColor: 'oklch(84.00% 0.055 6.93 / 1)',
+        mainColor: ' oklch(63.71% 0.1862 304.76 / 1)',
+        secondaryColor: 'oklch(66.54% 0.2210 304.03 / 1)',
+      },
+      {
         id: '?',
         backgroundColor: 'oklch(15.0% 0.045 280.0 / 1)', // dark base
         mainColor: 'oklch(95.0% 0.180 320.0 / 1)', // bright magenta-pink

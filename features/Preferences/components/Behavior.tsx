@@ -36,6 +36,12 @@ const Behavior = () => {
   const setPronunciationPitch = usePreferencesStore(
     state => state.setPronunciationPitch,
   );
+  const pronunciationAutoPlay = usePreferencesStore(
+    state => state.pronunciationAutoPlay,
+  );
+  const setPronunciationAutoPlay = usePreferencesStore(
+    state => state.setPronunciationAutoPlay,
+  );
   const furiganaEnabled = usePreferencesStore(state => state.furiganaEnabled);
   const setFuriganaEnabled = usePreferencesStore(
     state => state.setFuriganaEnabled,
@@ -85,16 +91,20 @@ const Behavior = () => {
             'flex-1 overflow-hidden',
           )}
           style={{
-            outline: !displayKana ? '3px solid var(--secondary-color)' : 'none',
+            outline: 'none',
+            backgroundColor: !displayKana
+              ? 'var(--secondary-color)'
+              : 'var(--card-color)',
+            color: !displayKana
+              ? 'var(--background-color)'
+              : 'var(--secondary-color)',
+            transition: 'background-color 275ms, color 275ms',
           }}
           onClick={() => {
             playClick();
             setDisplayKana(false);
           }}
         >
-          <span className='text-(--main-color)'>
-            {!displayKana && '\u2B24 '}
-          </span>
           Romaji&nbsp;🇺🇸
         </button>
         <button
@@ -106,16 +116,20 @@ const Behavior = () => {
             'flex-1 overflow-hidden',
           )}
           style={{
-            outline: displayKana ? '3px solid var(--secondary-color)' : 'none',
+            outline: 'none',
+            backgroundColor: displayKana
+              ? 'var(--secondary-color)'
+              : 'var(--card-color)',
+            color: displayKana
+              ? 'var(--background-color)'
+              : 'var(--secondary-color)',
+            transition: 'background-color 275ms, color 275ms',
           }}
           onClick={() => {
             playClick();
             setDisplayKana(true);
           }}
         >
-          <span className='text-(--main-color)'>
-            {displayKana && '\u2B24 '}
-          </span>
           Kana&nbsp;🇯🇵
         </button>
       </div>
@@ -133,21 +147,21 @@ const Behavior = () => {
             'flex-1 overflow-hidden',
           )}
           style={{
-            outline: furiganaEnabled
-              ? '3px solid var(--secondary-color)'
-              : 'none',
+            outline: 'none',
+            backgroundColor: furiganaEnabled
+              ? 'var(--secondary-color)'
+              : 'var(--card-color)',
+            color: furiganaEnabled
+              ? 'var(--background-color)'
+              : 'var(--secondary-color)',
+            transition: 'background-color 275ms, color 275ms',
           }}
           onClick={() => {
             playClick();
             setFuriganaEnabled(true);
           }}
         >
-          <span>
-            <span className='text-(--main-color)'>
-              {furiganaEnabled && '\u2B24 '}
-            </span>
-            on
-          </span>
+          <span>on</span>
           <span className='mb-0.5 text-sm'>ふり</span>
         </button>
         <button
@@ -160,21 +174,21 @@ const Behavior = () => {
             'flex-1 overflow-hidden',
           )}
           style={{
-            outline: !furiganaEnabled
-              ? '3px solid var(--secondary-color)'
-              : 'none',
+            outline: 'none',
+            backgroundColor: !furiganaEnabled
+              ? 'var(--secondary-color)'
+              : 'var(--card-color)',
+            color: !furiganaEnabled
+              ? 'var(--background-color)'
+              : 'var(--secondary-color)',
+            transition: 'background-color 275ms, color 275ms',
           }}
           onClick={() => {
             playClick();
             setFuriganaEnabled(false);
           }}
         >
-          <span>
-            <span className='text-(--main-color)'>
-              {!furiganaEnabled && '\u2B24 '}
-            </span>
-            off
-          </span>
+          <span>off</span>
         </button>
       </div>
 
@@ -190,19 +204,21 @@ const Behavior = () => {
             'flex-1 overflow-hidden',
           )}
           style={{
-            outline: !silentMode ? '3px solid var(--secondary-color)' : 'none',
+            outline: 'none',
+            backgroundColor: !silentMode
+              ? 'var(--secondary-color)'
+              : 'var(--card-color)',
+            color: !silentMode
+              ? 'var(--background-color)'
+              : 'var(--secondary-color)',
+            transition: 'background-color 275ms, color 275ms',
           }}
           onClick={() => {
             playClick();
             setSilentMode(false);
           }}
         >
-          <span>
-            <span className='text-(--main-color)'>
-              {!silentMode && '\u2B24 '}
-            </span>
-            on
-          </span>
+          <span>on</span>
           <AudioLines size={20} className='mb-0.5' />
         </button>
         <button
@@ -215,19 +231,21 @@ const Behavior = () => {
             'flex-1 overflow-hidden',
           )}
           style={{
-            outline: silentMode ? '3px solid var(--secondary-color)' : 'none',
+            outline: 'none',
+            backgroundColor: silentMode
+              ? 'var(--secondary-color)'
+              : 'var(--card-color)',
+            color: silentMode
+              ? 'var(--background-color)'
+              : 'var(--secondary-color)',
+            transition: 'background-color 275ms, color 275ms',
           }}
           onClick={() => {
             playClick();
             setSilentMode(true);
           }}
         >
-          <span>
-            <span className='text-(--main-color)'>
-              {silentMode && '\u2B24 '}
-            </span>
-            off
-          </span>
+          <span>off</span>
           <VolumeX size={20} className='mb-0.5' />
         </button>
       </div>
@@ -244,18 +262,76 @@ const Behavior = () => {
             'flex-1 overflow-hidden',
           )}
           style={{
-            outline: pronunciationEnabled
-              ? '3px solid var(--secondary-color)'
-              : 'none',
+            outline: 'none',
+            backgroundColor: pronunciationEnabled
+              ? 'var(--secondary-color)'
+              : 'var(--card-color)',
+            color: pronunciationEnabled
+              ? 'var(--background-color)'
+              : 'var(--secondary-color)',
+            transition: 'background-color 275ms, color 275ms',
           }}
           onClick={() => {
             playClick();
             setPronunciationEnabled(true);
           }}
         >
+          <span>on</span>
+          <Volume2 size={20} className='mb-0.5' />
+        </button>
+        <button
+          className={clsx(
+            buttonBorderStyles,
+            'text-center text-lg',
+            'w-1/2 p-4 md:w-1/4',
+            'flex flex-row items-end justify-center gap-1.5',
+            'text-(--secondary-color)',
+            'flex-1 overflow-hidden',
+          )}
+          style={{
+            outline: 'none',
+            backgroundColor: !pronunciationEnabled
+              ? 'var(--secondary-color)'
+              : 'var(--card-color)',
+            color: !pronunciationEnabled
+              ? 'var(--background-color)'
+              : 'var(--secondary-color)',
+            transition: 'background-color 275ms, color 275ms',
+          }}
+          onClick={() => {
+            playClick();
+            setPronunciationEnabled(false);
+          }}
+        >
+          <span>off</span>
+          <VolumeX size={20} className='mb-0.5' />
+        </button>
+      </div>
+
+      <h4 className='text-lg'>Auto-play pronunciation for new prompts:</h4>
+      <div className='flex flex-row gap-4 p-1'>
+        <button
+          className={clsx(
+            buttonBorderStyles,
+            'text-center text-lg',
+            'w-1/2 p-4 md:w-1/4',
+            'flex flex-row items-end justify-center gap-1.5',
+            'text-(--secondary-color)',
+            'flex-1 overflow-hidden',
+          )}
+          style={{
+            outline: pronunciationAutoPlay
+              ? '3px solid var(--secondary-color)'
+              : 'none',
+          }}
+          onClick={() => {
+            playClick();
+            setPronunciationAutoPlay(true);
+          }}
+        >
           <span>
             <span className='text-(--main-color)'>
-              {pronunciationEnabled && '\u2B24 '}
+              {pronunciationAutoPlay && '\u2B24 '}
             </span>
             on
           </span>
@@ -271,18 +347,18 @@ const Behavior = () => {
             'flex-1 overflow-hidden',
           )}
           style={{
-            outline: !pronunciationEnabled
+            outline: !pronunciationAutoPlay
               ? '3px solid var(--secondary-color)'
               : 'none',
           }}
           onClick={() => {
             playClick();
-            setPronunciationEnabled(false);
+            setPronunciationAutoPlay(false);
           }}
         >
           <span>
             <span className='text-(--main-color)'>
-              {!pronunciationEnabled && '\u2B24 '}
+              {!pronunciationAutoPlay && '\u2B24 '}
             </span>
             off
           </span>

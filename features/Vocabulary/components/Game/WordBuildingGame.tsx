@@ -37,7 +37,6 @@ const containsKanji = (text: string): boolean => {
   return /[\u4E00-\u9FAF]/.test(text);
 };
 
-
 interface VocabWordBuildingGameProps {
   selectedWordObjs: IVocabObj[];
   isHidden: boolean;
@@ -221,6 +220,7 @@ const VocabWordBuildingGame = ({
   const [questionData, setQuestionData] = useState(() =>
     generateQuestion(quizType),
   );
+  const [promptSequence, setPromptSequence] = useState(0);
   const [placedTileIds, setPlacedTileIds] = useState<number[]>([]);
   const [isChecking, setIsChecking] = useState(false);
   const [isCelebrating, setIsCelebrating] = useState(false);
@@ -253,6 +253,7 @@ const VocabWordBuildingGame = ({
       const typeToUse = nextQuizType ?? quizType;
       const newQuestion = generateQuestion(typeToUse);
       setQuestionData(newQuestion);
+      setPromptSequence(prev => prev + 1);
       setPlacedTileIds([]);
       setIsChecking(false);
       setIsCelebrating(false);
@@ -565,6 +566,8 @@ const VocabWordBuildingGame = ({
                       variant='icon-only'
                       size='sm'
                       className='bg-(--card-color) text-(--secondary-color)'
+                      autoPlay
+                      autoPlayTrigger={promptSequence}
                     />
                   )}
                 </motion.div>
@@ -595,7 +598,9 @@ const VocabWordBuildingGame = ({
                   : 'min-h-[5rem]',
               )}
               tilesContainerClassName={
-                isGlassMode ? 'rounded-xl bg-(--card-color) px-4 py-2' : undefined
+                isGlassMode
+                  ? 'rounded-xl bg-(--card-color) px-4 py-2'
+                  : undefined
               }
               tilesWrapperKey={questionData.word}
             />

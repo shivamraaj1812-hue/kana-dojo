@@ -16,13 +16,20 @@ const Info = () => {
 
   // Remove locale from pathname (e.g., /en/kana -> /kana)
   const pathWithoutLocale = removeLocaleFromPath(pathname);
+  const normalizedPath = pathWithoutLocale.startsWith('/kana/')
+    ? '/kana'
+    : pathWithoutLocale.startsWith('/kanji/')
+      ? '/kanji'
+      : pathWithoutLocale.startsWith('/vocabulary/')
+        ? '/vocabulary'
+        : pathWithoutLocale;
 
   // Get translations object, passing the translation function
   const translations = translationGen(t);
 
   // Get page data with fallback to home
   const pageData =
-    translations[pathWithoutLocale as keyof typeof translations] ||
+    translations[normalizedPath as keyof typeof translations] ||
     translations['/'];
 
   // Provide default values to avoid destructuring undefined
@@ -39,7 +46,7 @@ const Info = () => {
       '/vocabulary',
       '/',
       '/sentences',
-    ].includes(pathWithoutLocale)
+    ].includes(normalizedPath)
       ? true
       : false,
   );
