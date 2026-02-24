@@ -78,18 +78,15 @@ export const AchievementCard = ({
             <div
               className={clsx(
                 'flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-bold',
-                'border-2',
               )}
               style={
                 isUnlocked
                   ? {
                       backgroundColor: config.bgColor,
-                      borderColor: config.borderColor,
                       color: config.color,
                     }
                   : {
                       backgroundColor: '#F3F4F6',
-                      borderColor: '#D1D5DB',
                       color: '#9CA3AF',
                     }
               }
