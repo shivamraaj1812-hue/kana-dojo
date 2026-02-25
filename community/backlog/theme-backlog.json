@@ -1745,7 +1745,9 @@
     "mainColor": "oklch(86.0% 0.165 95.0 / 1)",
     "secondaryColor": "oklch(70.0% 0.115 75.0 / 1)",
     "issued": false,
-    "completed": false
+    "completed": true,
+    "completedBy": "Phourtie-Phour",
+    "completedPR": 5936
   },
   {
     "id": "coastal-breeze",
