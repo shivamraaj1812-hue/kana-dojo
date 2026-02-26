@@ -617,7 +617,7 @@
     "explanation": "In Japanese it usually means complaint. (Set 4)",
     "example": "お客様からクレームが届いた。",
     "id": 69,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
