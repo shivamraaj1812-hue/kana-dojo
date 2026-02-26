@@ -326,7 +326,7 @@
     "region": "Nagoya",
     "note": "Strong Nagoya marker. (Set 2)",
     "id": 33,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
