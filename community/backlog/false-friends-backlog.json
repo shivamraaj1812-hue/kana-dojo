@@ -554,7 +554,7 @@
     "explanation": "マンション means apartment building in Japanese. (Set 4)",
     "example": "駅前のマンションに住んでいます。",
     "id": 62,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
